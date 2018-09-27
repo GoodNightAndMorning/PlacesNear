@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    var _mapManager:BMKMapManager!
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -24,6 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navi:UINavigationController = UINavigationController(rootViewController: vc)
         
         self.window?.rootViewController = navi
+        
+        
+        _mapManager = BMKMapManager()
+        let ret = _mapManager.start(PNMapKey, generalDelegate: nil)
+        if ret {
+            print("map manager start failed!")
+        }
         
         return true
     }

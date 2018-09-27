@@ -17,6 +17,10 @@ target 'PlacesNear' do
     # Pods for testing
   end
 
-  pod 'Alamofire', '~> 4.4'
-
+  pod 'Alamofire'
+  pod 'SnapKit'
+  pod 'HandyJSON', '4.0.0-beta.1'
+  pod 'RxSwift'
+  
+  pod 'BaiduMapKit'
 end

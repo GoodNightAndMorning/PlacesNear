@@ -9,16 +9,16 @@
 import UIKit
 
 class PNHomeViewController: UIViewController {
-
+    
+    var _mapView:BMKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.view.backgroundColor = UIColor.orange
         
-        print("hello world")
-        print("hello world")
-        print("hello world")
-        print("hello world")
+        _mapView = BMKMapView(frame: self.view.bounds)
+        self.view .addSubview(_mapView)
     }
 
     override func didReceiveMemoryWarning() {
