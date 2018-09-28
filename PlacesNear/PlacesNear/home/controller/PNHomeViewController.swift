@@ -16,15 +16,12 @@ class PNHomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.initNavi()
-        
-        
+
         _mapView = BMKMapView(frame: self.view.bounds)
         self.view .addSubview(_mapView)
         
+        self.initNavi()
         self.initUi()
-        
         self.initEvents()
     }
 }
@@ -40,6 +37,9 @@ extension PNHomeViewController {
         }
         self.allViews.clickTitleViewBlock = {
             //TODO:点击导航栏标题事件
+        }
+        self.allViews.clickLocationBtnBlock = {
+            //TODO:点击定位按钮事件
         }
     }
 }
@@ -62,6 +62,20 @@ extension PNHomeViewController {
             make.bottom.equalToSuperview().offset(-30)
             make.width.equalTo(60)
             make.height.equalTo(60)
+        }
+        
+        self.view.addSubview(allViews.locationBtn)
+        allViews.locationBtn.snp.makeConstraints { (make) in
+            make.right.equalToSuperview().offset(-20)
+            make.bottom.equalToSuperview().offset(-150)
+        }
+        
+        self.view.addSubview(allViews.rulerView)
+        allViews.rulerView.snp.makeConstraints { (make) in
+            make.centerX.equalTo(allViews.locationBtn).offset(-5)
+            make.bottom.equalTo(allViews.locationBtn.snp.top).offset(-20)
+            make.width.equalTo(30)
+            make.height.equalTo(200)
         }
     }
 }

@@ -12,6 +12,7 @@ class PNHomeView: UIView {
     
     var clickPublishBtnBlock:(() -> ())?
     var clickTitleViewBlock:(() -> ())?
+    var clickLocationBtnBlock:(() -> ())?
     
     lazy var titleView:UIView = {
         let view = UIView()
@@ -65,6 +66,20 @@ class PNHomeView: UIView {
         btn.addTarget(self, action: #selector(publishAction), for: UIControlEvents.touchUpInside)
         return btn
     }()
+    
+    lazy var locationBtn:UIButton = {
+        let btn = UIButton(type: UIButtonType.custom)
+        btn.setImage(UIImage(named: "arrows_down"), for: UIControlState.normal)
+        btn.addTarget(self, action: #selector(clickLocationBtnAction), for: UIControlEvents.touchUpInside)
+        return btn
+    }()
+    
+    lazy var rulerView:PNDistanceRulerView = {
+        let view = PNDistanceRulerView()
+        let arr:[String] = ["1","2","5","10","20"]
+        view.setLimbArr(limbArr: arr)
+        return view
+    }()
 }
 extension PNHomeView {
     @objc func publishAction() {
@@ -74,6 +89,11 @@ extension PNHomeView {
     }
     @objc func clickTitleViewAction() {
         if let block = self.clickTitleViewBlock {
+            block()
+        }
+    }
+    @objc func clickLocationBtnAction() {
+        if let block = self.clickLocationBtnBlock {
             block()
         }
     }

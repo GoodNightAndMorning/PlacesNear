@@ -15,6 +15,7 @@
 		185869D7215C803D0073BAAE /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185869D6215C803D0073BAAE /* Constant.swift */; };
 		18586A35215DF8B80073BAAE /* PNHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18586A34215DF8B80073BAAE /* PNHomeView.swift */; };
 		18DF3D14215E0D8F00514E89 /* PNAnimationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF3D13215E0D8F00514E89 /* PNAnimationButton.swift */; };
+		18DF3D16215E27BA00514E89 /* PNDistanceRulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF3D15215E27BA00514E89 /* PNDistanceRulerView.swift */; };
 		5F3839C3AC5C5296BF1E90D0 /* Pods_PlacesNearUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4ED9A5A4F5838AE783902B5 /* Pods_PlacesNearUITests.framework */; };
 		9926660A023B9291082AE44A /* Pods_PlacesNearTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 103B54AC3069FF5CBBA250D8 /* Pods_PlacesNearTests.framework */; };
 		EF17E0B781A47A7F978D9E98 /* Pods_PlacesNear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2C78E24DA1C933D4C9284E1 /* Pods_PlacesNear.framework */; };
@@ -59,6 +60,7 @@
 		185869DB215C8FB00073BAAE /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = Pods/BaiduMapKit/BaiduMapKit/thirdlibs/libssl.a; sourceTree = "<group>"; };
 		18586A34215DF8B80073BAAE /* PNHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNHomeView.swift; sourceTree = "<group>"; };
 		18DF3D13215E0D8F00514E89 /* PNAnimationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNAnimationButton.swift; sourceTree = "<group>"; };
+		18DF3D15215E27BA00514E89 /* PNDistanceRulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNDistanceRulerView.swift; sourceTree = "<group>"; };
 		4DBD803D7466F9E18A3C912E /* Pods-PlacesNearUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlacesNearUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlacesNearUITests/Pods-PlacesNearUITests.release.xcconfig"; sourceTree = "<group>"; };
 		592CBD239B21C2424318A8FB /* Pods-PlacesNearTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlacesNearTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlacesNearTests/Pods-PlacesNearTests.debug.xcconfig"; sourceTree = "<group>"; };
 		857B1435D7A618BE22920E44 /* Pods-PlacesNear.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlacesNear.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlacesNear/Pods-PlacesNear.release.xcconfig"; sourceTree = "<group>"; };
@@ -154,7 +156,6 @@
 				18586A38215DF8DB0073BAAE /* viewModel */,
 				18586A37215DF8C90073BAAE /* controller */,
 				18586A36215DF8C10073BAAE /* view */,
-				185869CF215C71D10073BAAE /* PNHomeViewController.swift */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -173,6 +174,9 @@
 		18586A36215DF8C10073BAAE /* view */ = {
 			isa = PBXGroup;
 			children = (
+				18586A34215DF8B80073BAAE /* PNHomeView.swift */,
+				18DF3D13215E0D8F00514E89 /* PNAnimationButton.swift */,
+				18DF3D15215E27BA00514E89 /* PNDistanceRulerView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -180,7 +184,7 @@
 		18586A37215DF8C90073BAAE /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				18586A34215DF8B80073BAAE /* PNHomeView.swift */,
+				185869CF215C71D10073BAAE /* PNHomeViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -195,7 +199,6 @@
 		18DF3D0F215E0BC900514E89 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				18DF3D13215E0D8F00514E89 /* PNAnimationButton.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				18586A35215DF8B80073BAAE /* PNHomeView.swift in Sources */,
 				185869D0215C71D10073BAAE /* PNHomeViewController.swift in Sources */,
 				185869D7215C803D0073BAAE /* Constant.swift in Sources */,
+				18DF3D16215E27BA00514E89 /* PNDistanceRulerView.swift in Sources */,
 				18DF3D14215E0D8F00514E89 /* PNAnimationButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
