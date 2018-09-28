@@ -13,6 +13,7 @@ class PNHomeView: UIView {
     var clickPublishBtnBlock:(() -> ())?
     var clickTitleViewBlock:(() -> ())?
     var clickLocationBtnBlock:(() -> ())?
+    var distanceRulerBlock:((_ :Float) -> ())?
     
     lazy var titleView:UIView = {
         let view = UIView()
@@ -69,8 +70,10 @@ class PNHomeView: UIView {
     
     lazy var locationBtn:UIButton = {
         let btn = UIButton(type: UIButtonType.custom)
-        btn.setImage(UIImage(named: "arrows_down"), for: UIControlState.normal)
+        btn.setImage(UIImage(named: "location"), for: UIControlState.normal)
         btn.addTarget(self, action: #selector(clickLocationBtnAction), for: UIControlEvents.touchUpInside)
+        btn.backgroundColor = UIColor.white
+        btn.layer.cornerRadius = 5
         return btn
     }()
     
@@ -78,6 +81,12 @@ class PNHomeView: UIView {
         let view = PNDistanceRulerView()
         let arr:[String] = ["1","2","5","10","20"]
         view.setLimbArr(limbArr: arr)
+        view.distanceRulerBlock = {
+            distance in
+            if let block = self.distanceRulerBlock {
+                block(distance)
+            }
+        }
         return view
     }()
 }

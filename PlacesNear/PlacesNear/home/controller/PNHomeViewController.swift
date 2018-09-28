@@ -41,6 +41,10 @@ extension PNHomeViewController {
         self.allViews.clickLocationBtnBlock = {
             //TODO:点击定位按钮事件
         }
+        self.allViews.distanceRulerBlock = {
+            distance in
+            //TODO:距离尺拖动事件
+        }
     }
 }
 
@@ -66,16 +70,20 @@ extension PNHomeViewController {
         
         self.view.addSubview(allViews.locationBtn)
         allViews.locationBtn.snp.makeConstraints { (make) in
-            make.right.equalToSuperview().offset(-20)
+            make.right.equalToSuperview().offset(-30)
             make.bottom.equalToSuperview().offset(-150)
+            make.width.equalTo(30)
+            make.height.equalTo(30)
         }
         
         self.view.addSubview(allViews.rulerView)
         allViews.rulerView.snp.makeConstraints { (make) in
-            make.centerX.equalTo(allViews.locationBtn).offset(-5)
+            make.centerX.equalTo(allViews.locationBtn).offset(5)
             make.bottom.equalTo(allViews.locationBtn.snp.top).offset(-20)
-            make.width.equalTo(30)
+            make.width.equalTo(55)
             make.height.equalTo(200)
         }
     }
 }
+
+

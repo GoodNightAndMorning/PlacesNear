@@ -17,3 +17,4 @@ let PNMapKey = "BbPrBUuzEGdyM9XfXu3hEnddV8XSdvjI"
 
 let FontSize18 = UIFont.systemFont(ofSize: 18)
 let FontSize16 = UIFont.systemFont(ofSize: 16)
+let FontSize14 = UIFont.systemFont(ofSize: 14)
