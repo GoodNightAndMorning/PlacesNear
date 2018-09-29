@@ -13,13 +13,16 @@ class PNHomeView: UIView {
     var clickPublishBtnBlock:(() -> ())?
     var clickTitleViewBlock:(() -> ())?
     var clickLocationBtnBlock:(() -> ())?
-    var distanceRulerBlock:((_ :Float) -> ())?
     
     lazy var titleView:UIView = {
         let view = UIView()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(clickTitleViewAction))
+        view.addGestureRecognizer(tap)
+        
         view.addSubview(self.titleLb)
         view.addSubview(self.titleIcon)
-        let tap = UITapGestureRecognizer(target: self, action: #selector(clickTitleViewAction))
+        
         self.titleLb.snp.makeConstraints({ (make) in
             make.left.equalTo(view)
             make.top.equalTo(view)
@@ -35,7 +38,7 @@ class PNHomeView: UIView {
     
     lazy var titleLb:UILabel = {
         let lb = UILabel()
-        lb.text = "选择地点名称"
+        lb.text = "选择标签"
         lb.font = FontSize18
         lb.textColor = UIColor.black
         return lb
@@ -81,12 +84,14 @@ class PNHomeView: UIView {
         let view = PNDistanceRulerView()
         let arr:[String] = ["1","2","5","10","20"]
         view.setLimbArr(limbArr: arr)
-        view.distanceRulerBlock = {
-            distance in
-            if let block = self.distanceRulerBlock {
-                block(distance)
-            }
-        }
+
+        return view
+    }()
+    
+    lazy var tagsView:PNTagsView = {
+        let view = PNTagsView()
+        view.isHidden = true
+
         return view
     }()
 }

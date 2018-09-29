@@ -13,7 +13,11 @@ import SnapKit
 import Alamofire
 import RxSwift
 
+//百度地图Key
 let PNMapKey = "BbPrBUuzEGdyM9XfXu3hEnddV8XSdvjI"
+
+let KScreenWidth = UIScreen.main.bounds.size.width
+let kScreenHeight = UIScreen.main.bounds.size.height
 
 let FontSize18 = UIFont.systemFont(ofSize: 18)
 let FontSize16 = UIFont.systemFont(ofSize: 16)

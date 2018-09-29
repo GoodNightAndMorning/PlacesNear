@@ -23,7 +23,7 @@ class PNDistanceRulerView: UIView {
         self.backgroundColor = UIColor.clear
         
         let pan = UIPanGestureRecognizer(target: self, action: #selector(arrowsPanAction(pan:)))
-        self.arrows.addGestureRecognizer(pan)
+        self.addGestureRecognizer(pan)
     }
     override func layoutSubviews() {
         self.addSubview(arrows)
@@ -119,7 +119,7 @@ class PNDistanceRulerView: UIView {
         
         let str = array.last
         
-        (str as! NSString).draw(at: CGPoint(x: 1, y: bigLimb * CGFloat(array.count - 1) + 10 - 5), withAttributes: [NSAttributedStringKey.font : FontSize14, NSAttributedStringKey.foregroundColor:UIColor.black])
+        (str! as NSString).draw(at: CGPoint(x: 1, y: bigLimb * CGFloat(array.count - 1) + 10 - 5), withAttributes: [NSAttributedStringKey.font : FontSize14, NSAttributedStringKey.foregroundColor:UIColor.black])
         
         ctx.strokePath()
     }

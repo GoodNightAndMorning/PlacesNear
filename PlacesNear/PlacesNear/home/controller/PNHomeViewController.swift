@@ -13,6 +13,7 @@ class PNHomeViewController: UIViewController {
     var allViews:PNHomeView = PNHomeView()
     
     var _mapView:BMKMapView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +23,18 @@ class PNHomeViewController: UIViewController {
         
         self.initNavi()
         self.initUi()
+        self.initData()
         self.initEvents()
     }
 }
 
+// MARK: - 设置数据
+extension PNHomeViewController {
+    func initData() {
+        let tags:[String] = ["公交站","地铁站","电动车维修店","四儿子店","商业广场","垃圾回收站"]
+        self.allViews.tagsView.setTags(tags: tags)
+    }
+}
 // MARK: - 事件
 extension PNHomeViewController {
     @objc func setAction() {
@@ -33,17 +42,38 @@ extension PNHomeViewController {
     }
     func initEvents() {
         self.allViews.clickPublishBtnBlock = {
-            //TODO:发布事件
+            let vc = PNPublishViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         self.allViews.clickTitleViewBlock = {
             //TODO:点击导航栏标题事件
+            UIView.animate(withDuration: 1, animations: {
+                self.allViews.tagsView.isHidden = !self.allViews.tagsView.isHidden
+            })
         }
         self.allViews.clickLocationBtnBlock = {
             //TODO:点击定位按钮事件
         }
-        self.allViews.distanceRulerBlock = {
+        self.allViews.rulerView.distanceRulerBlock = {
             distance in
             //TODO:距离尺拖动事件
+        }
+        self.allViews.tagsView.selectTapBlock = {
+            index in
+            //TODO:选择tag事件
+            self.allViews.tagsView.isHidden = true
+        }
+        self.allViews.tagsView.openAllTagsBlock = {
+            let vc = PNTagsViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+            vc.selectTagBlock = {
+                tagName in
+                //TODO:所有标签页面回调事件
+                print(tagName)
+            }
+            
+            self.allViews.tagsView.isHidden = true
         }
     }
 }
@@ -51,6 +81,7 @@ extension PNHomeViewController {
 // MARK: - UI
 extension PNHomeViewController {
     func initNavi() {
+ 
         self.navigationItem.titleView = allViews.titleView
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: allViews.cityLb)
@@ -82,6 +113,12 @@ extension PNHomeViewController {
             make.bottom.equalTo(allViews.locationBtn.snp.top).offset(-20)
             make.width.equalTo(55)
             make.height.equalTo(200)
+        }
+        
+        self.view.addSubview(allViews.tagsView)
+        allViews.tagsView.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview()
+            make.top.equalToSuperview().offset(UIApplication.shared.statusBarFrame.size.height + (self.navigationController?.navigationBar.frame.size.height)!)
         }
     }
 }
