@@ -37,6 +37,13 @@ extension PNPublishViewController {
 }
 extension PNPublishViewController {
     func initUi() {
+    
+        self.view.addSubview(allView.layoutMainScrollView())
+        allView.mainScrollView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        
+        
         self.view.addSubview(allView.submitBtn)
         
         allView.submitBtn.snp.makeConstraints { (make) in

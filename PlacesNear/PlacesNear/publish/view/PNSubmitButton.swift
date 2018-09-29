@@ -107,7 +107,7 @@ extension PNSubmitButton {
         
         UIView.animate(withDuration: 1.0, animations: {
             if self.state == SubmitState.success {
-                self.submitLb.text = "提交成功"
+                self.submitLb.text = "谢谢您的发布!"
             }else{
                 self.submitLb.text = "提交失败，请重新提交"
             }

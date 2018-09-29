@@ -20,7 +20,6 @@ target 'PlacesNear' do
   pod 'Alamofire'
   pod 'SnapKit'
   pod 'HandyJSON', '4.0.0-beta.1'
-  pod 'RxSwift'
 
   pod 'BaiduMapKit'
 end

@@ -11,7 +11,6 @@ import Foundation
 import HandyJSON
 import SnapKit
 import Alamofire
-import RxSwift
 
 //百度地图Key
 let PNMapKey = "BbPrBUuzEGdyM9XfXu3hEnddV8XSdvjI"
