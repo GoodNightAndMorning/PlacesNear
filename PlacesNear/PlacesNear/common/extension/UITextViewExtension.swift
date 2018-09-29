@@ -17,7 +17,6 @@ extension UITextView {
         btn.frame = CGRect(x: 0, y: 0, width: KScreenWidth, height: 44)
         btn.addTarget(self, action: #selector(closeKeyboardAction), for: UIControlEvents.touchUpInside)
         self.inputAccessoryView = btn
-        print("aaa")
     }
     @objc private func closeKeyboardAction() {
         self.resignFirstResponder()
