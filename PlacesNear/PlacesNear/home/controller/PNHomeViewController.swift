@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PNHomeViewController: UIViewController {
+class PNHomeViewController: SZViewController {
     
     var allViews:PNHomeView = PNHomeView()
     

@@ -9,7 +9,7 @@
 import UIKit
 
 let PNTagsTableViewCellIdentifier = "PNTagsTableViewCell"
-class PNTagsViewController: UIViewController {
+class PNTagsViewController: SZViewController {
 
     var selectTagBlock:((_ :String) -> ())?
     

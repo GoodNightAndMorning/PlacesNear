@@ -40,7 +40,7 @@ class PNHomeView: UIView {
         let lb = UILabel()
         lb.text = "选择标签"
         lb.font = FontSize18
-        lb.textColor = UIColor.black
+        lb.textColor = UIColor.white
         return lb
     }()
     
@@ -54,7 +54,7 @@ class PNHomeView: UIView {
         let lb = UILabel()
         lb.text = "福州"
         lb.font = FontSize16
-        lb.textColor = UIColor.black
+        lb.textColor = UIColor.white
         lb.frame = CGRect(x: 0, y: 0, width: 100, height: 44)
         return lb
     }()

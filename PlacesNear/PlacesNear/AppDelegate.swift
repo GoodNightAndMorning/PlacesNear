@@ -21,10 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         
         let vc:PNHomeViewController = PNHomeViewController()
-        let navi:UINavigationController = UINavigationController(rootViewController: vc)
+        let navi:SZNavigationController = SZNavigationController(rootViewController: vc)
         
         self.window?.rootViewController = navi
         
+        application.statusBarStyle = UIStatusBarStyle.lightContent
         
         _mapManager = BMKMapManager()
         let ret = _mapManager.start(PNMapKey, generalDelegate: nil)

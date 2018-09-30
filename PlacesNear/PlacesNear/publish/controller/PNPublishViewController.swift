@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PNPublishViewController: UIViewController {
+class PNPublishViewController: SZViewController {
 
     let allView:PNPublishView = PNPublishView()
     

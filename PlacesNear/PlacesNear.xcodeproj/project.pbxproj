@@ -26,6 +26,8 @@
 		18DF3D2B215F486E00514E89 /* PNPublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF3D2A215F486E00514E89 /* PNPublishViewController.swift */; };
 		18DF3D2D215F4B5D00514E89 /* PNSubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF3D2C215F4B5D00514E89 /* PNSubmitButton.swift */; };
 		18DF3D2F215F526800514E89 /* PNPublishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF3D2E215F526800514E89 /* PNPublishView.swift */; };
+		18DF3DAB2160D42800514E89 /* SZViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF3DA92160D42800514E89 /* SZViewController.swift */; };
+		18DF3DAC2160D42800514E89 /* SZNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF3DAA2160D42800514E89 /* SZNavigationController.swift */; };
 		5F3839C3AC5C5296BF1E90D0 /* Pods_PlacesNearUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4ED9A5A4F5838AE783902B5 /* Pods_PlacesNearUITests.framework */; };
 		9926660A023B9291082AE44A /* Pods_PlacesNearTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 103B54AC3069FF5CBBA250D8 /* Pods_PlacesNearTests.framework */; };
 		EF17E0B781A47A7F978D9E98 /* Pods_PlacesNear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2C78E24DA1C933D4C9284E1 /* Pods_PlacesNear.framework */; };
@@ -81,6 +83,8 @@
 		18DF3D2A215F486E00514E89 /* PNPublishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNPublishViewController.swift; sourceTree = "<group>"; };
 		18DF3D2C215F4B5D00514E89 /* PNSubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNSubmitButton.swift; sourceTree = "<group>"; };
 		18DF3D2E215F526800514E89 /* PNPublishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNPublishView.swift; sourceTree = "<group>"; };
+		18DF3DA92160D42800514E89 /* SZViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SZViewController.swift; path = ../../../../svn/FXLWFamily/SwiftBase/SwiftBase/common/SZViewController.swift; sourceTree = "<group>"; };
+		18DF3DAA2160D42800514E89 /* SZNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SZNavigationController.swift; path = ../../../../svn/FXLWFamily/SwiftBase/SwiftBase/common/SZNavigationController.swift; sourceTree = "<group>"; };
 		4DBD803D7466F9E18A3C912E /* Pods-PlacesNearUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlacesNearUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlacesNearUITests/Pods-PlacesNearUITests.release.xcconfig"; sourceTree = "<group>"; };
 		592CBD239B21C2424318A8FB /* Pods-PlacesNearTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlacesNearTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlacesNearTests/Pods-PlacesNearTests.debug.xcconfig"; sourceTree = "<group>"; };
 		857B1435D7A618BE22920E44 /* Pods-PlacesNear.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlacesNear.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlacesNear/Pods-PlacesNear.release.xcconfig"; sourceTree = "<group>"; };
@@ -200,6 +204,8 @@
 				18DF3D19215F0DF500514E89 /* params */,
 				18DF3D0F215E0BC900514E89 /* view */,
 				185869D6215C803D0073BAAE /* Constant.swift */,
+				18DF3DAA2160D42800514E89 /* SZNavigationController.swift */,
+				18DF3DA92160D42800514E89 /* SZViewController.swift */,
 				185869D8215C84A10073BAAE /* PlacesNear-Bridging-Header.h */,
 			);
 			path = common;
@@ -351,7 +357,6 @@
 				1858699A215C71880073BAAE /* Frameworks */,
 				1858699B215C71880073BAAE /* Resources */,
 				6A5A32608B9236794A7D6F60 /* [CP] Embed Pods Frameworks */,
-				E05327E43ED5730C53527691 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -546,24 +551,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E05327E43ED5730C53527691 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-PlacesNear/Pods-PlacesNear-resources.sh",
-				"${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mapapi.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PlacesNear/Pods-PlacesNear-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -575,6 +562,7 @@
 				185869A1215C71880073BAAE /* AppDelegate.swift in Sources */,
 				18DF3D24215F24A300514E89 /* PNTagsViewController.swift in Sources */,
 				18586A35215DF8B80073BAAE /* PNHomeView.swift in Sources */,
+				18DF3DAC2160D42800514E89 /* SZNavigationController.swift in Sources */,
 				18DF3D18215F0D4900514E89 /* PNTagsView.swift in Sources */,
 				18DF3D1F215F0E3900514E89 /* SXRequest.swift in Sources */,
 				185869D0215C71D10073BAAE /* PNHomeViewController.swift in Sources */,
@@ -584,6 +572,7 @@
 				0710E336215FC26300540EC8 /* UITextViewExtension.swift in Sources */,
 				18DF3D2D215F4B5D00514E89 /* PNSubmitButton.swift in Sources */,
 				185869D7215C803D0073BAAE /* Constant.swift in Sources */,
+				18DF3DAB2160D42800514E89 /* SZViewController.swift in Sources */,
 				18DF3D26215F25E700514E89 /* PNTagsTableViewCell.swift in Sources */,
 				18DF3D16215E27BA00514E89 /* PNDistanceRulerView.swift in Sources */,
 				18DF3D14215E0D8F00514E89 /* PNAnimationButton.swift in Sources */,
