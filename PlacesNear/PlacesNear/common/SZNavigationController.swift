@@ -12,12 +12,12 @@ open class SZNavigationController: UINavigationController {
 
     override open func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationBar.barTintColor = UIColor.white
+        self.navigationBar.barTintColor = UIColor.black
         
         let dict:NSDictionary = [NSAttributedStringKey.foregroundColor: UIColor.white,NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 18)]
         self.navigationBar.titleTextAttributes = dict as? [NSAttributedStringKey : AnyObject]
         
-        self.navigationBar.tintColor = UIColor.black
+        self.navigationBar.tintColor = UIColor.white
     }
 
     override open func didReceiveMemoryWarning() {

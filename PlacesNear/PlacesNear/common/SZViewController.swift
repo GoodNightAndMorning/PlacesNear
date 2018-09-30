@@ -27,6 +27,8 @@ open class SZViewController: UIViewController {
         
         self.view.backgroundColor = UIColor.white
         
+        
+        
         NotificationCenter.default.addObserver(self,selector: #selector(keyboardWillChange(_:)),name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self,selector: #selector(keyboardWillHiden(_:)),name: .UIKeyboardWillHide, object: nil)
         

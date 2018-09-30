@@ -14,6 +14,7 @@ class PNHomeViewController: SZViewController {
     
     var _mapView:BMKMapView!
 
+    let tags:[String] = ["公交站","地铁站","电动车维修店","四儿子店","商业广场","垃圾回收站"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,6 @@ class PNHomeViewController: SZViewController {
 // MARK: - 设置数据
 extension PNHomeViewController {
     func initData() {
-        let tags:[String] = ["公交站","地铁站","电动车维修店","四儿子店","商业广场","垃圾回收站"]
         self.allViews.tagsView.setTags(tags: tags)
     }
 }
@@ -50,6 +50,7 @@ extension PNHomeViewController {
             UIView.animate(withDuration: 1, animations: {
                 self.allViews.tagsView.isHidden = !self.allViews.tagsView.isHidden
             })
+            self.allViews.titleIcon.image = self.allViews.tagsView.isHidden ? UIImage(named: "arrows_down") : UIImage(named: "arrows_up")
         }
         self.allViews.clickLocationBtnBlock = {
             //TODO:点击定位按钮事件
@@ -62,6 +63,10 @@ extension PNHomeViewController {
             index in
             //TODO:选择tag事件
             self.allViews.tagsView.isHidden = true
+            
+            self.allViews.titleIcon.image = UIImage(named: "arrows_down")
+
+            self.allViews.titleLb.text = self.tags[index]
         }
         self.allViews.tagsView.openAllTagsBlock = {
             let vc = PNTagsViewController()
@@ -70,7 +75,9 @@ extension PNHomeViewController {
             vc.selectTagBlock = {
                 tagName in
                 //TODO:所有标签页面回调事件
-                print(tagName)
+                self.allViews.titleLb.text = tagName
+                
+                self.allViews.titleIcon.image = UIImage(named: "arrows_down")
             }
             
             self.allViews.tagsView.isHidden = true
@@ -81,14 +88,13 @@ extension PNHomeViewController {
 // MARK: - UI
 extension PNHomeViewController {
     func initNavi() {
- 
+        
         self.navigationItem.titleView = allViews.titleView
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: allViews.cityLb)
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "设置", style: UIBarButtonItemStyle.plain, target: self, action: #selector(setAction))
-        
-        self.navigationController?.navigationBar.tintColor = UIColor.black
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_set"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(setAction))
+    
     }
     func initUi() {
         self.view.addSubview(allViews.publishBtn)

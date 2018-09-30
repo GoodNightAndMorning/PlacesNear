@@ -12,6 +12,8 @@ class PNPublishViewController: SZViewController {
 
     let allView:PNPublishView = PNPublishView()
     
+    var photos:[UIImage] = [UIImage]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +24,8 @@ class PNPublishViewController: SZViewController {
         self.initEvents()
     }
 }
+
+// MARK: - 初始化事件
 extension PNPublishViewController {
     func initEvents() {
         allView.submitBtn.clickBtnBlock = {
@@ -32,9 +36,66 @@ extension PNPublishViewController {
         }
         allView.submitBtn.finishBlock = {
             //TODO:按钮动画结束事件
+            
+        }
+        allView.deletePhotoBlock = {
+            index in
+            self.photos.remove(at: index)
+            self.allView.createPhotosView(photos: self.photos)
+        }
+        allView.selectPhotoBlock = {
+            let vc = SXPhotoPickerViewController(num: Int32(self.photos.count))
+            
+            self.navigationController?.pushViewController(vc!, animated: true)
+            
+            vc?.finishSelectPhotoBlock = {
+                photoArr in
+                
+                self.photos.append(contentsOf: photoArr as! [UIImage])
+                self.allView.createPhotosView(photos: self.photos)
+            }
+        }
+        allView.selectTagBlock = {
+            let vc = PNTagsViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+            vc.selectTagBlock = {
+                tagName in
+                self.allView.placeTagTf.text = tagName
+            }
+        }
+    }
+    @objc func textFieldDidChange(textField:UITextField) {
+        if textField == allView.yourPhoneTf {
+            textField.limitTextCount(count: 11)
+        } else if textField == allView.placePhoneTf {
+            textField.limitTextCount(count: 11)
         }
     }
 }
+extension PNPublishViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        if textView == allView.descTv {
+            textView.limitTextCount(count: 150)
+            
+            allView.descCountLb.text = "\(textView.text.count)/150"
+        }
+    }
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView == allView.descTv {
+            allView.descPlaceholderLb.isHidden = true
+        }
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView == allView.descTv {
+            if allView.descTv.text.count > 0 {
+                allView.descPlaceholderLb.isHidden = true
+            }else{
+                allView.descPlaceholderLb.isHidden = false
+            }
+        }
+    }
+}
+// MARK: - 初始化UI
 extension PNPublishViewController {
     func initUi() {
     
@@ -42,6 +103,12 @@ extension PNPublishViewController {
         allView.mainScrollView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+        
+        allView.placeNameTf.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
+        allView.placePhoneTf.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
+        allView.yourPhoneTf.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
+        
+        allView.descTv.delegate = self
         
         
         self.view.addSubview(allView.submitBtn)

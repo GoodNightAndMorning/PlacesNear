@@ -9,6 +9,37 @@
 /* Begin PBXBuildFile section */
 		0710E336215FC26300540EC8 /* UITextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0710E334215FC26300540EC8 /* UITextViewExtension.swift */; };
 		0710E337215FC26300540EC8 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0710E335215FC26300540EC8 /* UITextFieldExtension.swift */; };
+		0710E33A2160F2A100540EC8 /* SZNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0710E3382160F2A000540EC8 /* SZNavigationController.swift */; };
+		0710E33B2160F2A100540EC8 /* SZViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0710E3392160F2A100540EC8 /* SZViewController.swift */; };
+		0710E3442160FC9600540EC8 /* PNPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0710E3432160FC9600540EC8 /* PNPhotoModel.swift */; };
+		0710E36C2161060000540EC8 /* NHHasSelectPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0710E3472161060000540EC8 /* NHHasSelectPhotosView.m */; };
+		0710E36D2161060000540EC8 /* NHPhotosPickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0710E3482161060000540EC8 /* NHPhotosPickerCollectionViewCell.m */; };
+		0710E36E2161060000540EC8 /* NHHasSelectPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0710E34A2161060000540EC8 /* NHHasSelectPhotoCollectionViewCell.m */; };
+		0710E36F2161060000540EC8 /* SXTakePhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0710E34C2161060000540EC8 /* SXTakePhotoView.m */; };
+		0710E3702161060000540EC8 /* deleteIcon_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0710E34F2161060000540EC8 /* deleteIcon_white@3x.png */; };
+		0710E3712161060000540EC8 /* deleteIcon_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0710E3502161060000540EC8 /* deleteIcon_white@2x.png */; };
+		0710E3722161060000540EC8 /* deleteIcon_red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0710E3512161060000540EC8 /* deleteIcon_red@3x.png */; };
+		0710E3732161060000540EC8 /* exchangeCameraIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0710E3522161060000540EC8 /* exchangeCameraIcon@3x.png */; };
+		0710E3742161060000540EC8 /* exchangeCameraIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0710E3532161060000540EC8 /* exchangeCameraIcon@2x.png */; };
+		0710E3752161060000540EC8 /* deleteIcon_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0710E3542161060000540EC8 /* deleteIcon_red@2x.png */; };
+		0710E3762161060000540EC8 /* cameraBtnIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0710E3552161060000540EC8 /* cameraBtnIcon@2x.png */; };
+		0710E3772161060000540EC8 /* cameraBtnIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0710E3562161060000540EC8 /* cameraBtnIcon@3x.png */; };
+		0710E3782161060000540EC8 /* SXCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0710E3572161060000540EC8 /* SXCameraViewController.m */; };
+		0710E3792161060000540EC8 /* NHPhotoPickerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0710E3592161060000540EC8 /* NHPhotoPickerModel.m */; };
+		0710E37A2161060000540EC8 /* NHAlbumsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0710E35A2161060000540EC8 /* NHAlbumsView.m */; };
+		0710E37B2161060000540EC8 /* NHAlbumsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0710E35B2161060000540EC8 /* NHAlbumsTableViewCell.m */; };
+		0710E37C2161060000540EC8 /* 上啦拉-箭头-拷贝@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0710E35D2161060000540EC8 /* 上啦拉-箭头-拷贝@3x.png */; };
+		0710E37D2161060000540EC8 /* 上啦拉-箭头-拷贝@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0710E35E2161060000540EC8 /* 上啦拉-箭头-拷贝@2x.png */; };
+		0710E37E2161060000540EC8 /* unselectIcon_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0710E35F2161060000540EC8 /* unselectIcon_white@2x.png */; };
+		0710E37F2161060000540EC8 /* 下拉-箭头@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0710E3602161060000540EC8 /* 下拉-箭头@2x.png */; };
+		0710E3802161060000540EC8 /* 下拉-箭头@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0710E3612161060000540EC8 /* 下拉-箭头@3x.png */; };
+		0710E3812161060000540EC8 /* unselectIcon_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0710E3622161060000540EC8 /* unselectIcon_white@3x.png */; };
+		0710E3822161060000540EC8 /* selectIcon_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0710E3632161060000540EC8 /* selectIcon_red@2x.png */; };
+		0710E3832161060000540EC8 /* selectIcon_red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0710E3642161060000540EC8 /* selectIcon_red@3x.png */; };
+		0710E3842161060000540EC8 /* SXPhotoPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0710E3682161060000540EC8 /* SXPhotoPickerViewController.m */; };
+		0710E386216108E200540EC8 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0710E385216108E200540EC8 /* Photos.framework */; };
+		0710E3882161091900540EC8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0710E3872161091800540EC8 /* AVFoundation.framework */; };
+		0710E38A2161160800540EC8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0710E3892161160800540EC8 /* StringExtension.swift */; };
 		185869A1215C71880073BAAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185869A0215C71880073BAAE /* AppDelegate.swift */; };
 		185869A8215C71890073BAAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185869A7215C71890073BAAE /* Assets.xcassets */; };
 		185869B6215C71890073BAAE /* PlacesNearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185869B5215C71890073BAAE /* PlacesNearTests.swift */; };
@@ -26,8 +57,6 @@
 		18DF3D2B215F486E00514E89 /* PNPublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF3D2A215F486E00514E89 /* PNPublishViewController.swift */; };
 		18DF3D2D215F4B5D00514E89 /* PNSubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF3D2C215F4B5D00514E89 /* PNSubmitButton.swift */; };
 		18DF3D2F215F526800514E89 /* PNPublishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF3D2E215F526800514E89 /* PNPublishView.swift */; };
-		18DF3DAB2160D42800514E89 /* SZViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF3DA92160D42800514E89 /* SZViewController.swift */; };
-		18DF3DAC2160D42800514E89 /* SZNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF3DAA2160D42800514E89 /* SZNavigationController.swift */; };
 		5F3839C3AC5C5296BF1E90D0 /* Pods_PlacesNearUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4ED9A5A4F5838AE783902B5 /* Pods_PlacesNearUITests.framework */; };
 		9926660A023B9291082AE44A /* Pods_PlacesNearTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 103B54AC3069FF5CBBA250D8 /* Pods_PlacesNearTests.framework */; };
 		EF17E0B781A47A7F978D9E98 /* Pods_PlacesNear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2C78E24DA1C933D4C9284E1 /* Pods_PlacesNear.framework */; };
@@ -53,6 +82,46 @@
 /* Begin PBXFileReference section */
 		0710E334215FC26300540EC8 /* UITextViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewExtension.swift; sourceTree = "<group>"; };
 		0710E335215FC26300540EC8 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		0710E3382160F2A000540EC8 /* SZNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SZNavigationController.swift; sourceTree = "<group>"; };
+		0710E3392160F2A100540EC8 /* SZViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SZViewController.swift; sourceTree = "<group>"; };
+		0710E3432160FC9600540EC8 /* PNPhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNPhotoModel.swift; sourceTree = "<group>"; };
+		0710E3472161060000540EC8 /* NHHasSelectPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHHasSelectPhotosView.m; sourceTree = "<group>"; };
+		0710E3482161060000540EC8 /* NHPhotosPickerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHPhotosPickerCollectionViewCell.m; sourceTree = "<group>"; };
+		0710E3492161060000540EC8 /* SXPhotoPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXPhotoPickerViewController.h; sourceTree = "<group>"; };
+		0710E34A2161060000540EC8 /* NHHasSelectPhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHHasSelectPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		0710E34C2161060000540EC8 /* SXTakePhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXTakePhotoView.m; sourceTree = "<group>"; };
+		0710E34D2161060000540EC8 /* SXCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXCameraViewController.h; sourceTree = "<group>"; };
+		0710E34F2161060000540EC8 /* deleteIcon_white@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deleteIcon_white@3x.png"; sourceTree = "<group>"; };
+		0710E3502161060000540EC8 /* deleteIcon_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deleteIcon_white@2x.png"; sourceTree = "<group>"; };
+		0710E3512161060000540EC8 /* deleteIcon_red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deleteIcon_red@3x.png"; sourceTree = "<group>"; };
+		0710E3522161060000540EC8 /* exchangeCameraIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "exchangeCameraIcon@3x.png"; sourceTree = "<group>"; };
+		0710E3532161060000540EC8 /* exchangeCameraIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "exchangeCameraIcon@2x.png"; sourceTree = "<group>"; };
+		0710E3542161060000540EC8 /* deleteIcon_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deleteIcon_red@2x.png"; sourceTree = "<group>"; };
+		0710E3552161060000540EC8 /* cameraBtnIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cameraBtnIcon@2x.png"; sourceTree = "<group>"; };
+		0710E3562161060000540EC8 /* cameraBtnIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cameraBtnIcon@3x.png"; sourceTree = "<group>"; };
+		0710E3572161060000540EC8 /* SXCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXCameraViewController.m; sourceTree = "<group>"; };
+		0710E3582161060000540EC8 /* SXTakePhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXTakePhotoView.h; sourceTree = "<group>"; };
+		0710E3592161060000540EC8 /* NHPhotoPickerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHPhotoPickerModel.m; sourceTree = "<group>"; };
+		0710E35A2161060000540EC8 /* NHAlbumsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHAlbumsView.m; sourceTree = "<group>"; };
+		0710E35B2161060000540EC8 /* NHAlbumsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHAlbumsTableViewCell.m; sourceTree = "<group>"; };
+		0710E35D2161060000540EC8 /* 上啦拉-箭头-拷贝@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "上啦拉-箭头-拷贝@3x.png"; sourceTree = "<group>"; };
+		0710E35E2161060000540EC8 /* 上啦拉-箭头-拷贝@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "上啦拉-箭头-拷贝@2x.png"; sourceTree = "<group>"; };
+		0710E35F2161060000540EC8 /* unselectIcon_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unselectIcon_white@2x.png"; sourceTree = "<group>"; };
+		0710E3602161060000540EC8 /* 下拉-箭头@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "下拉-箭头@2x.png"; sourceTree = "<group>"; };
+		0710E3612161060000540EC8 /* 下拉-箭头@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "下拉-箭头@3x.png"; sourceTree = "<group>"; };
+		0710E3622161060000540EC8 /* unselectIcon_white@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unselectIcon_white@3x.png"; sourceTree = "<group>"; };
+		0710E3632161060000540EC8 /* selectIcon_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selectIcon_red@2x.png"; sourceTree = "<group>"; };
+		0710E3642161060000540EC8 /* selectIcon_red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selectIcon_red@3x.png"; sourceTree = "<group>"; };
+		0710E3652161060000540EC8 /* NHHasSelectPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHHasSelectPhotosView.h; sourceTree = "<group>"; };
+		0710E3662161060000540EC8 /* NHPhotosPickerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHPhotosPickerCollectionViewCell.h; sourceTree = "<group>"; };
+		0710E3672161060000540EC8 /* NHHasSelectPhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHHasSelectPhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		0710E3682161060000540EC8 /* SXPhotoPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXPhotoPickerViewController.m; sourceTree = "<group>"; };
+		0710E3692161060000540EC8 /* NHAlbumsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHAlbumsView.h; sourceTree = "<group>"; };
+		0710E36A2161060000540EC8 /* NHPhotoPickerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHPhotoPickerModel.h; sourceTree = "<group>"; };
+		0710E36B2161060000540EC8 /* NHAlbumsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHAlbumsTableViewCell.h; sourceTree = "<group>"; };
+		0710E385216108E200540EC8 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		0710E3872161091800540EC8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0710E3892161160800540EC8 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		0CFC47869785D030F8EED2AA /* Pods-PlacesNear.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlacesNear.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlacesNear/Pods-PlacesNear.debug.xcconfig"; sourceTree = "<group>"; };
 		103B54AC3069FF5CBBA250D8 /* Pods_PlacesNearTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlacesNearTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1858699D215C71880073BAAE /* PlacesNear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlacesNear.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,8 +152,6 @@
 		18DF3D2A215F486E00514E89 /* PNPublishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNPublishViewController.swift; sourceTree = "<group>"; };
 		18DF3D2C215F4B5D00514E89 /* PNSubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNSubmitButton.swift; sourceTree = "<group>"; };
 		18DF3D2E215F526800514E89 /* PNPublishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNPublishView.swift; sourceTree = "<group>"; };
-		18DF3DA92160D42800514E89 /* SZViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SZViewController.swift; path = ../../../../svn/FXLWFamily/SwiftBase/SwiftBase/common/SZViewController.swift; sourceTree = "<group>"; };
-		18DF3DAA2160D42800514E89 /* SZNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SZNavigationController.swift; path = ../../../../svn/FXLWFamily/SwiftBase/SwiftBase/common/SZNavigationController.swift; sourceTree = "<group>"; };
 		4DBD803D7466F9E18A3C912E /* Pods-PlacesNearUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlacesNearUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlacesNearUITests/Pods-PlacesNearUITests.release.xcconfig"; sourceTree = "<group>"; };
 		592CBD239B21C2424318A8FB /* Pods-PlacesNearTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlacesNearTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlacesNearTests/Pods-PlacesNearTests.debug.xcconfig"; sourceTree = "<group>"; };
 		857B1435D7A618BE22920E44 /* Pods-PlacesNear.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlacesNear.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlacesNear/Pods-PlacesNear.release.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +166,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0710E3882161091900540EC8 /* AVFoundation.framework in Frameworks */,
+				0710E386216108E200540EC8 /* Photos.framework in Frameworks */,
 				EF17E0B781A47A7F978D9E98 /* Pods_PlacesNear.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,8 +196,90 @@
 			children = (
 				0710E335215FC26300540EC8 /* UITextFieldExtension.swift */,
 				0710E334215FC26300540EC8 /* UITextViewExtension.swift */,
+				0710E3892161160800540EC8 /* StringExtension.swift */,
 			);
 			path = extension;
+			sourceTree = "<group>";
+		};
+		0710E3422160FC6200540EC8 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				0710E3432160FC9600540EC8 /* PNPhotoModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		0710E345216105F500540EC8 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				0710E3462161060000540EC8 /* PhotosPicker */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		0710E3462161060000540EC8 /* PhotosPicker */ = {
+			isa = PBXGroup;
+			children = (
+				0710E3472161060000540EC8 /* NHHasSelectPhotosView.m */,
+				0710E3482161060000540EC8 /* NHPhotosPickerCollectionViewCell.m */,
+				0710E34A2161060000540EC8 /* NHHasSelectPhotoCollectionViewCell.m */,
+				0710E34B2161060000540EC8 /* Camera */,
+				0710E3592161060000540EC8 /* NHPhotoPickerModel.m */,
+				0710E35A2161060000540EC8 /* NHAlbumsView.m */,
+				0710E35B2161060000540EC8 /* NHAlbumsTableViewCell.m */,
+				0710E35C2161060000540EC8 /* image */,
+				0710E3652161060000540EC8 /* NHHasSelectPhotosView.h */,
+				0710E3662161060000540EC8 /* NHPhotosPickerCollectionViewCell.h */,
+				0710E3672161060000540EC8 /* NHHasSelectPhotoCollectionViewCell.h */,
+				0710E3492161060000540EC8 /* SXPhotoPickerViewController.h */,
+				0710E3682161060000540EC8 /* SXPhotoPickerViewController.m */,
+				0710E3692161060000540EC8 /* NHAlbumsView.h */,
+				0710E36A2161060000540EC8 /* NHPhotoPickerModel.h */,
+				0710E36B2161060000540EC8 /* NHAlbumsTableViewCell.h */,
+			);
+			path = PhotosPicker;
+			sourceTree = "<group>";
+		};
+		0710E34B2161060000540EC8 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				0710E34C2161060000540EC8 /* SXTakePhotoView.m */,
+				0710E34D2161060000540EC8 /* SXCameraViewController.h */,
+				0710E34E2161060000540EC8 /* image */,
+				0710E3572161060000540EC8 /* SXCameraViewController.m */,
+				0710E3582161060000540EC8 /* SXTakePhotoView.h */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		0710E34E2161060000540EC8 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				0710E34F2161060000540EC8 /* deleteIcon_white@3x.png */,
+				0710E3502161060000540EC8 /* deleteIcon_white@2x.png */,
+				0710E3512161060000540EC8 /* deleteIcon_red@3x.png */,
+				0710E3522161060000540EC8 /* exchangeCameraIcon@3x.png */,
+				0710E3532161060000540EC8 /* exchangeCameraIcon@2x.png */,
+				0710E3542161060000540EC8 /* deleteIcon_red@2x.png */,
+				0710E3552161060000540EC8 /* cameraBtnIcon@2x.png */,
+				0710E3562161060000540EC8 /* cameraBtnIcon@3x.png */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+		0710E35C2161060000540EC8 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				0710E35D2161060000540EC8 /* 上啦拉-箭头-拷贝@3x.png */,
+				0710E35E2161060000540EC8 /* 上啦拉-箭头-拷贝@2x.png */,
+				0710E35F2161060000540EC8 /* unselectIcon_white@2x.png */,
+				0710E3602161060000540EC8 /* 下拉-箭头@2x.png */,
+				0710E3612161060000540EC8 /* 下拉-箭头@3x.png */,
+				0710E3622161060000540EC8 /* unselectIcon_white@3x.png */,
+				0710E3632161060000540EC8 /* selectIcon_red@2x.png */,
+				0710E3642161060000540EC8 /* selectIcon_red@3x.png */,
+			);
+			path = image;
 			sourceTree = "<group>";
 		};
 		18586994215C71880073BAAE = {
@@ -198,14 +349,14 @@
 		185869D5215C80080073BAAE /* common */ = {
 			isa = PBXGroup;
 			children = (
+				0710E345216105F500540EC8 /* view */,
+				0710E3382160F2A000540EC8 /* SZNavigationController.swift */,
+				0710E3392160F2A100540EC8 /* SZViewController.swift */,
 				0710E333215FC23600540EC8 /* extension */,
 				18DF3D1B215F0E0C00514E89 /* request */,
 				18DF3D1A215F0DFE00514E89 /* model */,
 				18DF3D19215F0DF500514E89 /* params */,
-				18DF3D0F215E0BC900514E89 /* view */,
 				185869D6215C803D0073BAAE /* Constant.swift */,
-				18DF3DAA2160D42800514E89 /* SZNavigationController.swift */,
-				18DF3DA92160D42800514E89 /* SZViewController.swift */,
 				185869D8215C84A10073BAAE /* PlacesNear-Bridging-Header.h */,
 			);
 			path = common;
@@ -235,13 +386,6 @@
 			children = (
 			);
 			path = viewModel;
-			sourceTree = "<group>";
-		};
-		18DF3D0F215E0BC900514E89 /* view */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = view;
 			sourceTree = "<group>";
 		};
 		18DF3D19215F0DF500514E89 /* params */ = {
@@ -295,6 +439,7 @@
 		18DF3D27215F481800514E89 /* publish */ = {
 			isa = PBXGroup;
 			children = (
+				0710E3422160FC6200540EC8 /* model */,
 				18DF3D29215F485300514E89 /* view */,
 				18DF3D28215F482800514E89 /* controller */,
 			);
@@ -321,6 +466,8 @@
 		23D17E0D24E3CC9548A10949 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0710E3872161091800540EC8 /* AVFoundation.framework */,
+				0710E385216108E200540EC8 /* Photos.framework */,
 				185869DB215C8FB00073BAAE /* libssl.a */,
 				185869D9215C8FA00073BAAE /* libcrypto.a */,
 				185869D3215C7FCA0073BAAE /* Alamofire.framework */,
@@ -454,7 +601,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0710E3802161060000540EC8 /* 下拉-箭头@3x.png in Resources */,
 				185869A8215C71890073BAAE /* Assets.xcassets in Resources */,
+				0710E3722161060000540EC8 /* deleteIcon_red@3x.png in Resources */,
+				0710E3752161060000540EC8 /* deleteIcon_red@2x.png in Resources */,
+				0710E37D2161060000540EC8 /* 上啦拉-箭头-拷贝@2x.png in Resources */,
+				0710E3822161060000540EC8 /* selectIcon_red@2x.png in Resources */,
+				0710E3702161060000540EC8 /* deleteIcon_white@3x.png in Resources */,
+				0710E37C2161060000540EC8 /* 上啦拉-箭头-拷贝@3x.png in Resources */,
+				0710E3812161060000540EC8 /* unselectIcon_white@3x.png in Resources */,
+				0710E3742161060000540EC8 /* exchangeCameraIcon@2x.png in Resources */,
+				0710E3772161060000540EC8 /* cameraBtnIcon@3x.png in Resources */,
+				0710E3732161060000540EC8 /* exchangeCameraIcon@3x.png in Resources */,
+				0710E3712161060000540EC8 /* deleteIcon_white@2x.png in Resources */,
+				0710E37E2161060000540EC8 /* unselectIcon_white@2x.png in Resources */,
+				0710E3762161060000540EC8 /* cameraBtnIcon@2x.png in Resources */,
+				0710E37F2161060000540EC8 /* 下拉-箭头@2x.png in Resources */,
+				0710E3832161060000540EC8 /* selectIcon_red@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,13 +721,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0710E3442160FC9600540EC8 /* PNPhotoModel.swift in Sources */,
 				18DF3D2B215F486E00514E89 /* PNPublishViewController.swift in Sources */,
+				0710E37A2161060000540EC8 /* NHAlbumsView.m in Sources */,
 				185869A1215C71880073BAAE /* AppDelegate.swift in Sources */,
 				18DF3D24215F24A300514E89 /* PNTagsViewController.swift in Sources */,
 				18586A35215DF8B80073BAAE /* PNHomeView.swift in Sources */,
-				18DF3DAC2160D42800514E89 /* SZNavigationController.swift in Sources */,
+				0710E33B2160F2A100540EC8 /* SZViewController.swift in Sources */,
 				18DF3D18215F0D4900514E89 /* PNTagsView.swift in Sources */,
 				18DF3D1F215F0E3900514E89 /* SXRequest.swift in Sources */,
+				0710E36F2161060000540EC8 /* SXTakePhotoView.m in Sources */,
+				0710E3842161060000540EC8 /* SXPhotoPickerViewController.m in Sources */,
+				0710E3792161060000540EC8 /* NHPhotoPickerModel.m in Sources */,
+				0710E38A2161160800540EC8 /* StringExtension.swift in Sources */,
+				0710E36C2161060000540EC8 /* NHHasSelectPhotosView.m in Sources */,
+				0710E36D2161060000540EC8 /* NHPhotosPickerCollectionViewCell.m in Sources */,
 				185869D0215C71D10073BAAE /* PNHomeViewController.swift in Sources */,
 				18DF3D1E215F0E3900514E89 /* SXModel.swift in Sources */,
 				18DF3D2F215F526800514E89 /* PNPublishView.swift in Sources */,
@@ -572,10 +743,13 @@
 				0710E336215FC26300540EC8 /* UITextViewExtension.swift in Sources */,
 				18DF3D2D215F4B5D00514E89 /* PNSubmitButton.swift in Sources */,
 				185869D7215C803D0073BAAE /* Constant.swift in Sources */,
-				18DF3DAB2160D42800514E89 /* SZViewController.swift in Sources */,
 				18DF3D26215F25E700514E89 /* PNTagsTableViewCell.swift in Sources */,
+				0710E36E2161060000540EC8 /* NHHasSelectPhotoCollectionViewCell.m in Sources */,
+				0710E37B2161060000540EC8 /* NHAlbumsTableViewCell.m in Sources */,
 				18DF3D16215E27BA00514E89 /* PNDistanceRulerView.swift in Sources */,
 				18DF3D14215E0D8F00514E89 /* PNAnimationButton.swift in Sources */,
+				0710E3782161060000540EC8 /* SXCameraViewController.m in Sources */,
+				0710E33A2160F2A100540EC8 /* SZNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

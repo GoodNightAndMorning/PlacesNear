@@ -10,6 +10,10 @@ import UIKit
 
 class PNPublishView: UIView {
 
+    var deletePhotoBlock:((_ :Int) -> ())?
+    var selectPhotoBlock:(() -> ())?
+    var selectTagBlock:(() -> ())?
+    
     lazy var submitBtn:PNSubmitButton = {
         let btn = PNSubmitButton()
         return btn
@@ -128,6 +132,7 @@ class PNPublishView: UIView {
             make.top.equalTo(sectionTitleLb2.snp.bottom)
         }
         
+        createPhotosView(photos: [UIImage]())
         view.addSubview(photosView)
         photosView.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview()
@@ -165,7 +170,12 @@ class PNPublishView: UIView {
         var tmpView:UIView?
         for dic in arr {
             let view = UIView()
-        
+            
+            if (dic["title"] as! String) == "地点标签:" {
+                let tap = UITapGestureRecognizer(target: self, action: #selector(selectTagAction))
+                view.addGestureRecognizer(tap)
+            }
+            
             let titleLb = UILabel()
             titleLb.textColor = UIColor.black
             titleLb.font = FontSize16
@@ -250,11 +260,69 @@ class PNPublishView: UIView {
         
         return view
     }
-    func createPhotosView() {
+    func createPhotosView(photos:[UIImage]) {
         for view in photosView.subviews {
             view.removeFromSuperview()
         }
         //TODO:照片UI
+        
+        var arr = photos
+        if arr.count < 9 {
+            arr.append(UIImage(named: "相机2")!)
+        }
+        
+        let width:CGFloat = (KScreenWidth - 50) / 4
+        var tmpImageView = UIImageView()
+        for i in 0..<arr.count {
+            let row:Int = i / 4
+            let num:Int = i % 4
+            
+            let imageView = UIImageView()
+            imageView.image = arr[i]
+            
+            self.photosView.addSubview(imageView)
+            imageView.snp.makeConstraints { (make) in
+                make.left.equalToSuperview().offset(10.0 + (width + 10.0) * CGFloat(num))
+                make.top.equalToSuperview().offset(10.0 + (width + 10) * CGFloat(row))
+                make.width.equalTo(width)
+                make.height.equalTo(width)
+            }
+            
+            tmpImageView = imageView
+            
+            if photos.count < 9 {
+                if i != arr.count - 1 {
+                    let deleteBtn = UIButton(type: UIButtonType.custom)
+                    deleteBtn.tag = i
+                    deleteBtn.setImage(UIImage(named: "删除1.png"), for: UIControlState.normal)
+                    deleteBtn .addTarget(self, action: #selector(deletePhotoAction(btn:)), for: UIControlEvents.touchUpInside)
+                    self.photosView.addSubview(deleteBtn)
+                    deleteBtn.snp.makeConstraints { (make) in
+                        make.right.equalTo(imageView.snp.right)
+                        make.top.equalTo(imageView.snp.top)
+                    }
+                }else {
+                    let tap = UITapGestureRecognizer(target: self, action: #selector(selectPhotoAction))
+                    imageView.isUserInteractionEnabled = true
+                    imageView.addGestureRecognizer(tap)
+                }
+            }else{
+                let deleteBtn = UIButton(type: UIButtonType.custom)
+                deleteBtn.tag = i
+                deleteBtn.setImage(UIImage(named: "删除1.png"), for: UIControlState.normal)
+                deleteBtn .addTarget(self, action: #selector(deletePhotoAction(btn:)), for: UIControlEvents.touchUpInside)
+                self.photosView.addSubview(deleteBtn)
+                deleteBtn.snp.makeConstraints { (make) in
+                    make.right.equalTo(imageView.snp.right)
+                    make.top.equalTo(imageView.snp.top)
+                }
+            
+            }
+        }
+        
+        tmpImageView.snp.makeConstraints { (make) in
+            make.bottom.equalTo(self.photosView.snp.bottom).offset(-10)
+        }
     }
     func createLinkView() -> UIView {
         let view = UIView()
@@ -278,5 +346,22 @@ class PNPublishView: UIView {
             make.right.equalToSuperview().offset(-15)
         }
         return view
+    }
+}
+extension PNPublishView {
+    @objc func selectPhotoAction() {
+        if let block = selectPhotoBlock {
+            block()
+        }
+    }
+    @objc func deletePhotoAction(btn:UIButton) {
+        if let block = deletePhotoBlock {
+            block(btn.tag)
+        }
+    }
+    @objc func selectTagAction() {
+        if let block = selectTagBlock {
+            block()
+        }
     }
 }

@@ -30,7 +30,7 @@ class PNHomeView: UIView {
         })
         self.titleIcon.snp.makeConstraints({ (make) in
             make.centerY.equalTo(view)
-            make.left.equalTo(titleLb.snp.right)
+            make.left.equalTo(titleLb.snp.right).offset(3)
             make.right.equalTo(view)
         })
         return view
