@@ -15,6 +15,8 @@ class PNMapView: UIView {
     
     var userLocation:BMKUserLocation = BMKUserLocation()
     
+    var currentAngle:CGFloat = 0
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     
@@ -33,6 +35,7 @@ class PNMapView: UIView {
         mapView.userTrackingMode = BMKUserTrackingModeNone
         mapView.mapType = UInt(BMKMapTypeStandard)
         mapView.zoomLevel = 17
+        mapView.delegate = self
         
         let displayParam = BMKLocationViewDisplayParam()
         displayParam.locationViewOffsetX = 0;//定位偏移量(经度)
@@ -52,6 +55,13 @@ class PNMapView: UIView {
         locationService.delegate = self
         locationService.startUserLocationService()
     }
+    func setLocationViewAngle(angle:CGFloat) {
+        let locationView:BMKAnnotationView? = mapView.value(forKey: "_locationView") as? BMKAnnotationView
+        
+        if let view = locationView {
+            view.transform = CGAffineTransform(rotationAngle: angle)
+        }
+    }
 }
 extension PNMapView:BMKLocationServiceDelegate {
     func didUpdate(_ userLocation: BMKUserLocation!) {
@@ -61,8 +71,13 @@ extension PNMapView:BMKLocationServiceDelegate {
         mapView.setCenter(self.userLocation.location.coordinate, animated: true)
     }
     func didUpdateUserHeading(_ userLocation: BMKUserLocation!) {
-        self.userLocation = userLocation
+        currentAngle = CGFloat(userLocation.heading.magneticHeading * Double.pi / 180)
         
-        mapView.updateLocationData(self.userLocation)
+        
+    }
+}
+extension PNMapView:BMKMapViewDelegate {
+    func mapView(_ mapView: BMKMapView!, onDrawMapFrame status: BMKMapStatus!) {
+        setLocationViewAngle(angle: currentAngle)
     }
 }
