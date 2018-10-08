@@ -13,7 +13,7 @@ import SnapKit
 import Alamofire
 
 //百度地图Key
-let PNMapKey = "BbPrBUuzEGdyM9XfXu3hEnddV8XSdvjI"
+let PNMapKey = "kLwAqa0V9Y173L5brL1fiP0ITTUEYecL"
 
 let KScreenWidth = UIScreen.main.bounds.size.width
 let kScreenHeight = UIScreen.main.bounds.size.height

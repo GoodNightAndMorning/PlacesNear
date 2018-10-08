@@ -28,8 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.statusBarStyle = UIStatusBarStyle.lightContent
         
         _mapManager = BMKMapManager()
-        let ret = _mapManager.start(PNMapKey, generalDelegate: nil)
-        if ret {
+        let ret = _mapManager.start(PNMapKey, generalDelegate: self)
+        if !ret {
             print("map manager start failed!")
         }
         
@@ -60,4 +60,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
+extension AppDelegate: BMKGeneralDelegate {
+    func onGetNetworkState(_ iError: Int32) {
+        if 0 == iError {
+            print("联网成功")
+        } else {
+            print("onGetNetworkState \(iError)")
+        }
+    }
+    func onGetPermissionState(_ iError: Int32) {
+        if 0 == iError {
+            print("授权成功")
+        } else {
+            print("onGetPermissionState \(iError)")
+        }
+    }
+}

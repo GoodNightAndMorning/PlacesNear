@@ -40,6 +40,19 @@
 		0710E386216108E200540EC8 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0710E385216108E200540EC8 /* Photos.framework */; };
 		0710E3882161091900540EC8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0710E3872161091800540EC8 /* AVFoundation.framework */; };
 		0710E38A2161160800540EC8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0710E3892161160800540EC8 /* StringExtension.swift */; };
+		182823B4216B2ABA007ED877 /* PNMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182823B3216B2ABA007ED877 /* PNMapView.swift */; };
+		182823B6216B3036007ED877 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182823B5216B3036007ED877 /* CoreLocation.framework */; };
+		182823B8216B303F007ED877 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182823B7216B303F007ED877 /* QuartzCore.framework */; };
+		182823BA216B3047007ED877 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182823B9216B3047007ED877 /* OpenGLES.framework */; };
+		182823BC216B3050007ED877 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182823BB216B3050007ED877 /* SystemConfiguration.framework */; };
+		182823BE216B3059007ED877 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182823BD216B3058007ED877 /* CoreGraphics.framework */; };
+		182823C0216B3064007ED877 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182823BF216B3064007ED877 /* Security.framework */; };
+		182823C2216B3070007ED877 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 182823C1216B3070007ED877 /* libsqlite3.0.tbd */; };
+		182823C4216B307A007ED877 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182823C3216B307A007ED877 /* CoreTelephony.framework */; };
+		182823C6216B3086007ED877 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 182823C5216B3086007ED877 /* libstdc++.6.0.9.tbd */; };
+		182823C7216B30A9007ED877 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 185869D9215C8FA00073BAAE /* libcrypto.a */; };
+		182823C8216B30B9007ED877 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 185869DB215C8FB00073BAAE /* libssl.a */; };
+		182823D0216B5691007ED877 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 182823CF216B5691007ED877 /* mapapi.bundle */; };
 		185869A1215C71880073BAAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185869A0215C71880073BAAE /* AppDelegate.swift */; };
 		185869A8215C71890073BAAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185869A7215C71890073BAAE /* Assets.xcassets */; };
 		185869B6215C71890073BAAE /* PlacesNearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185869B5215C71890073BAAE /* PlacesNearTests.swift */; };
@@ -124,6 +137,17 @@
 		0710E3892161160800540EC8 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		0CFC47869785D030F8EED2AA /* Pods-PlacesNear.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlacesNear.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlacesNear/Pods-PlacesNear.debug.xcconfig"; sourceTree = "<group>"; };
 		103B54AC3069FF5CBBA250D8 /* Pods_PlacesNearTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlacesNearTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		182823B3216B2ABA007ED877 /* PNMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNMapView.swift; sourceTree = "<group>"; };
+		182823B5216B3036007ED877 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		182823B7216B303F007ED877 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		182823B9216B3047007ED877 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		182823BB216B3050007ED877 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		182823BD216B3058007ED877 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		182823BF216B3064007ED877 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		182823C1216B3070007ED877 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		182823C3216B307A007ED877 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		182823C5216B3086007ED877 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		182823CF216B5691007ED877 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = Pods/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle; sourceTree = SOURCE_ROOT; };
 		1858699D215C71880073BAAE /* PlacesNear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlacesNear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		185869A0215C71880073BAAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		185869A7215C71890073BAAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -166,6 +190,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				182823C8216B30B9007ED877 /* libssl.a in Frameworks */,
+				182823C7216B30A9007ED877 /* libcrypto.a in Frameworks */,
+				182823C6216B3086007ED877 /* libstdc++.6.0.9.tbd in Frameworks */,
+				182823C4216B307A007ED877 /* CoreTelephony.framework in Frameworks */,
+				182823C2216B3070007ED877 /* libsqlite3.0.tbd in Frameworks */,
+				182823C0216B3064007ED877 /* Security.framework in Frameworks */,
+				182823BE216B3059007ED877 /* CoreGraphics.framework in Frameworks */,
+				182823BC216B3050007ED877 /* SystemConfiguration.framework in Frameworks */,
+				182823BA216B3047007ED877 /* OpenGLES.framework in Frameworks */,
+				182823B8216B303F007ED877 /* QuartzCore.framework in Frameworks */,
+				182823B6216B3036007ED877 /* CoreLocation.framework in Frameworks */,
 				0710E3882161091900540EC8 /* AVFoundation.framework in Frameworks */,
 				0710E386216108E200540EC8 /* Photos.framework in Frameworks */,
 				EF17E0B781A47A7F978D9E98 /* Pods_PlacesNear.framework in Frameworks */,
@@ -282,6 +317,14 @@
 			path = image;
 			sourceTree = "<group>";
 		};
+		182823B2216B2AA7007ED877 /* map */ = {
+			isa = PBXGroup;
+			children = (
+				182823B3216B2ABA007ED877 /* PNMapView.swift */,
+			);
+			path = map;
+			sourceTree = "<group>";
+		};
 		18586994215C71880073BAAE = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +350,8 @@
 		1858699F215C71880073BAAE /* PlacesNear */ = {
 			isa = PBXGroup;
 			children = (
+				182823CF216B5691007ED877 /* mapapi.bundle */,
+				182823B2216B2AA7007ED877 /* map */,
 				185869D5215C80080073BAAE /* common */,
 				185869CE215C71B50073BAAE /* home */,
 				18DF3D20215F245900514E89 /* tags */,
@@ -466,6 +511,15 @@
 		23D17E0D24E3CC9548A10949 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				182823C5216B3086007ED877 /* libstdc++.6.0.9.tbd */,
+				182823C3216B307A007ED877 /* CoreTelephony.framework */,
+				182823C1216B3070007ED877 /* libsqlite3.0.tbd */,
+				182823BF216B3064007ED877 /* Security.framework */,
+				182823BD216B3058007ED877 /* CoreGraphics.framework */,
+				182823BB216B3050007ED877 /* SystemConfiguration.framework */,
+				182823B9216B3047007ED877 /* OpenGLES.framework */,
+				182823B7216B303F007ED877 /* QuartzCore.framework */,
+				182823B5216B3036007ED877 /* CoreLocation.framework */,
 				0710E3872161091800540EC8 /* AVFoundation.framework */,
 				0710E385216108E200540EC8 /* Photos.framework */,
 				185869DB215C8FB00073BAAE /* libssl.a */,
@@ -504,6 +558,7 @@
 				1858699A215C71880073BAAE /* Frameworks */,
 				1858699B215C71880073BAAE /* Resources */,
 				6A5A32608B9236794A7D6F60 /* [CP] Embed Pods Frameworks */,
+				A61A79DFDC72F2B7A51381C2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -604,6 +659,7 @@
 				0710E3802161060000540EC8 /* 下拉-箭头@3x.png in Resources */,
 				185869A8215C71890073BAAE /* Assets.xcassets in Resources */,
 				0710E3722161060000540EC8 /* deleteIcon_red@3x.png in Resources */,
+				182823D0216B5691007ED877 /* mapapi.bundle in Resources */,
 				0710E3752161060000540EC8 /* deleteIcon_red@2x.png in Resources */,
 				0710E37D2161060000540EC8 /* 上啦拉-箭头-拷贝@2x.png in Resources */,
 				0710E3822161060000540EC8 /* selectIcon_red@2x.png in Resources */,
@@ -696,6 +752,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A61A79DFDC72F2B7A51381C2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PlacesNear/Pods-PlacesNear-resources.sh",
+				"${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mapapi.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PlacesNear/Pods-PlacesNear-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C14821B71E9EDE053EA56210 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -740,6 +814,7 @@
 				18DF3D1E215F0E3900514E89 /* SXModel.swift in Sources */,
 				18DF3D2F215F526800514E89 /* PNPublishView.swift in Sources */,
 				0710E337215FC26300540EC8 /* UITextFieldExtension.swift in Sources */,
+				182823B4216B2ABA007ED877 /* PNMapView.swift in Sources */,
 				0710E336215FC26300540EC8 /* UITextViewExtension.swift in Sources */,
 				18DF3D2D215F4B5D00514E89 /* PNSubmitButton.swift in Sources */,
 				185869D7215C803D0073BAAE /* Constant.swift in Sources */,

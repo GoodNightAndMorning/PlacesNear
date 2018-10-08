@@ -1,12 +1,12 @@
 PODS:
   - Alamofire (4.5.1)
-  - BaiduMapKit (3.4.2)
+  - BaiduMapKit (3.3.4)
   - HandyJSON (4.0.0-beta.1)
   - SnapKit (4.0.0)
 
 DEPENDENCIES:
   - Alamofire
-  - BaiduMapKit
+  - BaiduMapKit (~> 3.3.4)
   - HandyJSON (= 4.0.0-beta.1)
   - SnapKit
 
@@ -19,10 +19,10 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
-  BaiduMapKit: f61b19ecf07a3f2deede72b221b366bf698739ed
+  BaiduMapKit: 6f2d76a04b72e9af938afb5ca0f97d4417bbf9c0
   HandyJSON: 428bb18e2c34c2a77361accebf90cf64e4f74118
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 7d0b345cca781367d4a2bda146506a8b3ba5e2cd
+PODFILE CHECKSUM: 460eabf88f9660d3d603c3e51e3dbfc8805d7654
 
 COCOAPODS: 1.5.3

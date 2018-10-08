@@ -11,17 +11,15 @@ import UIKit
 class PNHomeViewController: SZViewController {
     
     var allViews:PNHomeView = PNHomeView()
-    
-    var _mapView:BMKMapView!
 
+    var mapView:PNMapView = PNMapView()
+    
     let tags:[String] = ["公交站","地铁站","电动车维修店","四儿子店","商业广场","垃圾回收站"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        _mapView = BMKMapView(frame: self.view.bounds)
-        self.view .addSubview(_mapView)
         
+        self.initMapView()
         self.initNavi()
         self.initUi()
         self.initData()
@@ -87,6 +85,12 @@ extension PNHomeViewController {
 
 // MARK: - UI
 extension PNHomeViewController {
+    func initMapView() {
+        self.view.addSubview(mapView)
+        mapView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+    }
     func initNavi() {
         
         self.navigationItem.titleView = allViews.titleView
