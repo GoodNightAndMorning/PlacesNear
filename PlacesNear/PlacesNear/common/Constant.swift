@@ -21,3 +21,4 @@ let kScreenHeight = UIScreen.main.bounds.size.height
 let FontSize18 = UIFont.systemFont(ofSize: 18)
 let FontSize16 = UIFont.systemFont(ofSize: 16)
 let FontSize14 = UIFont.systemFont(ofSize: 14)
+let FontSize12 = UIFont.systemFont(ofSize: 12)

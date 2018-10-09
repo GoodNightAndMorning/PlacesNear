@@ -87,6 +87,13 @@ class PNHomeView: UIView {
 
         return view
     }()
+    lazy var distanceLb:UILabel = {
+        let lb = UILabel()
+        lb.textColor = UIColor.black
+        lb.font = FontSize14
+        lb.text = "1.00公里"
+        return lb
+    }()
     
     lazy var tagsView:PNTagsView = {
         let view = PNTagsView()
@@ -94,6 +101,7 @@ class PNHomeView: UIView {
 
         return view
     }()
+    
 }
 extension PNHomeView {
     @objc func publishAction() {

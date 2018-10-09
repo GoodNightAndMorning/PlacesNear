@@ -53,6 +53,10 @@
 		182823C7216B30A9007ED877 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 185869D9215C8FA00073BAAE /* libcrypto.a */; };
 		182823C8216B30B9007ED877 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 185869DB215C8FB00073BAAE /* libssl.a */; };
 		182823D0216B5691007ED877 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 182823CF216B5691007ED877 /* mapapi.bundle */; };
+		18282404216C954F007ED877 /* PNPlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18282403216C954F007ED877 /* PNPlaceModel.swift */; };
+		18282406216C96DA007ED877 /* PNAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18282405216C96DA007ED877 /* PNAnnotation.swift */; };
+		18282408216C99B8007ED877 /* PNAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18282407216C99B8007ED877 /* PNAnnotationView.swift */; };
+		1828240A216CA590007ED877 /* PNPaopaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18282409216CA590007ED877 /* PNPaopaoView.swift */; };
 		185869A1215C71880073BAAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185869A0215C71880073BAAE /* AppDelegate.swift */; };
 		185869A8215C71890073BAAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185869A7215C71890073BAAE /* Assets.xcassets */; };
 		185869B6215C71890073BAAE /* PlacesNearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185869B5215C71890073BAAE /* PlacesNearTests.swift */; };
@@ -148,6 +152,10 @@
 		182823C3216B307A007ED877 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		182823C5216B3086007ED877 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		182823CF216B5691007ED877 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = Pods/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle; sourceTree = SOURCE_ROOT; };
+		18282403216C954F007ED877 /* PNPlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNPlaceModel.swift; sourceTree = "<group>"; };
+		18282405216C96DA007ED877 /* PNAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNAnnotation.swift; sourceTree = "<group>"; };
+		18282407216C99B8007ED877 /* PNAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNAnnotationView.swift; sourceTree = "<group>"; };
+		18282409216CA590007ED877 /* PNPaopaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNPaopaoView.swift; sourceTree = "<group>"; };
 		1858699D215C71880073BAAE /* PlacesNear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlacesNear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		185869A0215C71880073BAAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		185869A7215C71890073BAAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -321,6 +329,9 @@
 			isa = PBXGroup;
 			children = (
 				182823B3216B2ABA007ED877 /* PNMapView.swift */,
+				18282405216C96DA007ED877 /* PNAnnotation.swift */,
+				18282407216C99B8007ED877 /* PNAnnotationView.swift */,
+				18282409216CA590007ED877 /* PNPaopaoView.swift */,
 			);
 			path = map;
 			sourceTree = "<group>";
@@ -443,6 +454,7 @@
 		18DF3D1A215F0DFE00514E89 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				18282403216C954F007ED877 /* PNPlaceModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -797,10 +809,12 @@
 			files = (
 				0710E3442160FC9600540EC8 /* PNPhotoModel.swift in Sources */,
 				18DF3D2B215F486E00514E89 /* PNPublishViewController.swift in Sources */,
+				1828240A216CA590007ED877 /* PNPaopaoView.swift in Sources */,
 				0710E37A2161060000540EC8 /* NHAlbumsView.m in Sources */,
 				185869A1215C71880073BAAE /* AppDelegate.swift in Sources */,
 				18DF3D24215F24A300514E89 /* PNTagsViewController.swift in Sources */,
 				18586A35215DF8B80073BAAE /* PNHomeView.swift in Sources */,
+				18282406216C96DA007ED877 /* PNAnnotation.swift in Sources */,
 				0710E33B2160F2A100540EC8 /* SZViewController.swift in Sources */,
 				18DF3D18215F0D4900514E89 /* PNTagsView.swift in Sources */,
 				18DF3D1F215F0E3900514E89 /* SXRequest.swift in Sources */,
@@ -814,9 +828,11 @@
 				18DF3D1E215F0E3900514E89 /* SXModel.swift in Sources */,
 				18DF3D2F215F526800514E89 /* PNPublishView.swift in Sources */,
 				0710E337215FC26300540EC8 /* UITextFieldExtension.swift in Sources */,
+				18282408216C99B8007ED877 /* PNAnnotationView.swift in Sources */,
 				182823B4216B2ABA007ED877 /* PNMapView.swift in Sources */,
 				0710E336215FC26300540EC8 /* UITextViewExtension.swift in Sources */,
 				18DF3D2D215F4B5D00514E89 /* PNSubmitButton.swift in Sources */,
+				18282404216C954F007ED877 /* PNPlaceModel.swift in Sources */,
 				185869D7215C803D0073BAAE /* Constant.swift in Sources */,
 				18DF3D26215F25E700514E89 /* PNTagsTableViewCell.swift in Sources */,
 				0710E36E2161060000540EC8 /* NHHasSelectPhotoCollectionViewCell.m in Sources */,

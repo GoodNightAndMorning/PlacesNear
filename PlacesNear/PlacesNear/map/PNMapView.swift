@@ -10,6 +10,8 @@ import UIKit
 
 class PNMapView: UIView {
 
+    var didFinishLoadingBlock:(() -> ())?
+    
     var mapView:BMKMapView!
     var locationService:BMKLocationService!
     
@@ -63,21 +65,70 @@ class PNMapView: UIView {
         }
     }
 }
+
+// MARK: - 开放接口
+extension PNMapView {
+    func setCenter(radius:Double) {
+        let region:BMKCoordinateRegion = BMKCoordinateRegion(center: self.userLocation.location.coordinate, span: BMKCoordinateSpan(latitudeDelta: radius * 2 / 1.113 * 0.01, longitudeDelta: radius * 2 * 0.01))
+        
+        mapView.setRegion(region, animated: true)
+    }
+    func addAnnotation(placeModel:PNPlaceModel) {
+        
+        let annotation:PNAnnotation = PNAnnotation()
+        
+        annotation.coordinate = CLLocationCoordinate2D(latitude: placeModel.latitude!, longitude: placeModel.longitude!)
+        annotation.title = "万达广场"
+        
+        mapView.addAnnotation(annotation)
+    }
+}
+
 extension PNMapView:BMKLocationServiceDelegate {
     func didUpdate(_ userLocation: BMKUserLocation!) {
         self.userLocation = userLocation
         mapView.updateLocationData(self.userLocation)
         
-        mapView.setCenter(self.userLocation.location.coordinate, animated: true)
+//        mapView.setCenter(self.userLocation.location.coordinate, animated: true)
     }
     func didUpdateUserHeading(_ userLocation: BMKUserLocation!) {
         currentAngle = CGFloat(userLocation.heading.magneticHeading * Double.pi / 180)
         
-        
+        setLocationViewAngle(angle: currentAngle)
     }
 }
 extension PNMapView:BMKMapViewDelegate {
+    
+    func mapView(_ mapView: BMKMapView!, viewFor annotation: BMKAnnotation!) -> BMKAnnotationView! {
+        
+        if annotation.isKind(of: PNAnnotation.self) {
+            let identifier = "item"
+            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+            if annotationView == nil {
+                annotationView = PNAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            }
+            annotationView?.annotation = annotation// 重要
+            annotationView?.image = UIImage(named: "annotion_icon")// 设置打头针的图片
+            annotationView?.centerOffset = CGPoint(x: 0, y: 0)// 设置大头针中心偏移量
+            annotationView?.canShowCallout = true// 设置弹框
+            annotationView?.calloutOffset = CGPoint(x: 0, y: 0)// 设置弹框的偏移量
+
+            let paopaoView:BMKActionPaopaoView = BMKActionPaopaoView(customView: PNPaopaoView())
+            
+            annotationView?.paopaoView = paopaoView
+            
+            return annotationView
+        }
+        return nil;
+    }
+    
     func mapView(_ mapView: BMKMapView!, onDrawMapFrame status: BMKMapStatus!) {
         setLocationViewAngle(angle: currentAngle)
+    }
+    
+    func mapViewDidFinishLoading(_ mapView: BMKMapView!) {
+        if let block = didFinishLoadingBlock {
+            block()
+        }
     }
 }
