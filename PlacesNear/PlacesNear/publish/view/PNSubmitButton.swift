@@ -15,6 +15,7 @@ class PNSubmitButton: UIView {
         case failuer
     }
     
+    var willClickBtnBlock:(() -> ())?
     var clickBtnBlock:(() -> ())?
     var finishBlock:(() -> ())?
     func endAnimation(state:SubmitState) {
@@ -70,7 +71,11 @@ class PNSubmitButton: UIView {
 }
 extension PNSubmitButton {
     @objc func clickBtnAction() {
-        
+        if let block = willClickBtnBlock {
+            block()
+        }
+    }
+    public func beginAnimate() {
         self.isUserInteractionEnabled = false
         
         let shrinkAni = CABasicAnimation(keyPath: "bounds")

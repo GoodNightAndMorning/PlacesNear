@@ -89,6 +89,8 @@ extension PNMapView:BMKLocationServiceDelegate {
         self.userLocation = userLocation
         mapView.updateLocationData(self.userLocation)
         
+        PNLocation.shareInstance.latitude = self.userLocation.location.coordinate.latitude
+        PNLocation.shareInstance.longitude = self.userLocation.location.coordinate.longitude
 //        mapView.setCenter(self.userLocation.location.coordinate, animated: true)
     }
     func didUpdateUserHeading(_ userLocation: BMKUserLocation!) {

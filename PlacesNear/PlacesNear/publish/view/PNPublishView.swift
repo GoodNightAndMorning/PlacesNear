@@ -13,6 +13,8 @@ class PNPublishView: UIView {
     var deletePhotoBlock:((_ :Int) -> ())?
     var selectPhotoBlock:(() -> ())?
     var selectTagBlock:(() -> ())?
+    var selectCurrentLocationBlock:(() -> ())?
+    var selectLocationFromMapBlock:(() -> ())?
     
     lazy var submitBtn:PNSubmitButton = {
         let btn = PNSubmitButton()
@@ -41,7 +43,7 @@ class PNPublishView: UIView {
         tf.textColor = UIColor.black
         tf.font = FontSize16
         tf.placeholder = "请选择地点标签(必选)"
-        tf.isEnabled = false
+        tf.addTopBar()
         return tf
     }()
     lazy var yourPhoneTf:UITextField = {
@@ -79,6 +81,20 @@ class PNPublishView: UIView {
         let view = UIView()
         return view
     }()
+    lazy var latitudeLb:UILabel = {
+        let lb = UILabel()
+        lb.textColor = UIColor.black
+        lb.font = FontSize16
+        lb.setContentHuggingPriority(UILayoutPriority.defaultLow, for: UILayoutConstraintAxis.horizontal)
+        return lb
+    }()
+    lazy var longitudeLb:UILabel = {
+        let lb = UILabel()
+        lb.textColor = UIColor.black
+        lb.font = FontSize16
+        lb.setContentHuggingPriority(UILayoutPriority.defaultLow, for: UILayoutConstraintAxis.horizontal)
+        return lb
+    }()
     lazy var mainScrollView:UIScrollView = {
         let sv = UIScrollView()
         sv.backgroundColor = UIColor.groupTableViewBackground
@@ -113,6 +129,27 @@ class PNPublishView: UIView {
             make.top.equalTo(sectionTitleLb1.snp.bottom)
         }
         
+        
+        let sectionTitleLb4 = UILabel()
+        sectionTitleLb4.text = "    地点位置"
+        sectionTitleLb4.font = FontSize16
+        sectionTitleLb4.textColor = UIColor.black
+        sectionTitleLb4.backgroundColor = UIColor.groupTableViewBackground
+        view.addSubview(sectionTitleLb4)
+        sectionTitleLb4.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(inputView.snp.bottom)
+            make.height.equalTo(44)
+        }
+        
+        let locationView = createLocationView()
+        view.addSubview(locationView)
+        locationView.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(sectionTitleLb4.snp.bottom)
+            make.height.equalTo(88)
+        }
+        
         let sectionTitleLb2 = UILabel()
         sectionTitleLb2.text = "    详细描述"
         sectionTitleLb2.font = FontSize16
@@ -121,7 +158,7 @@ class PNPublishView: UIView {
         view.addSubview(sectionTitleLb2)
         sectionTitleLb2.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview()
-            make.top.equalTo(inputView.snp.bottom)
+            make.top.equalTo(locationView.snp.bottom)
             make.height.equalTo(44)
         }
         
@@ -137,29 +174,112 @@ class PNPublishView: UIView {
         photosView.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview()
             make.top.equalTo(descView.snp.bottom)
-        }
-        
-        let sectionTitleLb3 = UILabel()
-        sectionTitleLb3.text = "    请留下您的联系方式"
-        sectionTitleLb3.font = FontSize16
-        sectionTitleLb3.textColor = UIColor.black
-        sectionTitleLb3.backgroundColor = UIColor.groupTableViewBackground
-        view.addSubview(sectionTitleLb3)
-        sectionTitleLb3.snp.makeConstraints { (make) in
-            make.left.right.equalToSuperview()
-            make.top.equalTo(photosView.snp.bottom)
-            make.height.equalTo(44)
-        }
-        
-        let linView = createLinkView()
-        view.addSubview(linView)
-        linView.snp.makeConstraints { (make) in
-            make.left.right.equalToSuperview()
-            make.top.equalTo(sectionTitleLb3.snp.bottom)
             make.bottom.equalToSuperview()
         }
         
+//        let sectionTitleLb3 = UILabel()
+//        sectionTitleLb3.text = "    请留下您的联系方式"
+//        sectionTitleLb3.font = FontSize16
+//        sectionTitleLb3.textColor = UIColor.black
+//        sectionTitleLb3.backgroundColor = UIColor.groupTableViewBackground
+//        view.addSubview(sectionTitleLb3)
+//        sectionTitleLb3.snp.makeConstraints { (make) in
+//            make.left.right.equalToSuperview()
+//            make.top.equalTo(photosView.snp.bottom)
+//            make.height.equalTo(44)
+//        }
+//
+//        let linView = createLinkView()
+//        view.addSubview(linView)
+//        linView.snp.makeConstraints { (make) in
+//            make.left.right.equalToSuperview()
+//            make.top.equalTo(sectionTitleLb3.snp.bottom)
+//            make.bottom.equalToSuperview()
+//        }
+        
         return mainScrollView
+    }
+    func createLocationView() -> UIView {
+        let locationView = UIView()
+        
+        let titleLb1 = UILabel()
+        titleLb1.textColor = UIColor.black
+        titleLb1.font = FontSize16
+        titleLb1.text = "纬度:"
+        titleLb1.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: UILayoutConstraintAxis.horizontal)
+        
+        let titleLb2 = UILabel()
+        titleLb2.textColor = UIColor.black
+        titleLb2.font = FontSize16
+        titleLb2.text = "纬度:"
+        titleLb2.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: UILayoutConstraintAxis.horizontal)
+        
+        let grayLine = UIView()
+        grayLine.backgroundColor = UIColor.groupTableViewBackground
+        
+        let btn1 = UIButton(type: UIButtonType.custom)
+        btn1.setTitle("当前位置", for: UIControlState.normal)
+        btn1.backgroundColor = UIColor.black
+        btn1.layer.cornerRadius = 5
+        btn1.layer.masksToBounds = true
+        btn1.titleLabel?.font = FontSize14
+        btn1.addTarget(self, action: #selector(selectCurrentLocationAction), for: UIControlEvents.touchUpInside)
+        
+        let btn2 = UIButton(type: UIButtonType.custom)
+        btn2.setTitle("地图选择", for: UIControlState.normal)
+        btn2.backgroundColor = UIColor.black
+        btn2.layer.cornerRadius = 5
+        btn2.layer.masksToBounds = true
+        btn2.titleLabel?.font = FontSize14
+        btn2.addTarget(self, action: #selector(selectLocationFromMapAction), for: UIControlEvents.touchUpInside)
+        
+        locationView.addSubview(titleLb1)
+        locationView.addSubview(titleLb2)
+        locationView.addSubview(grayLine)
+        locationView.addSubview(btn1)
+        locationView.addSubview(btn2)
+        locationView.addSubview(latitudeLb)
+        locationView.addSubview(longitudeLb)
+        
+        titleLb1.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(25)
+            make.centerY.equalTo(locationView.snp.top).offset(22)
+        }
+        titleLb2.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(25)
+            make.centerY.equalTo(locationView.snp.top).offset(66)
+        }
+        grayLine.snp.makeConstraints { (make) in
+            make.centerY.equalTo(locationView.snp.top).offset(44)
+            make.left.equalToSuperview().offset(25)
+            make.height.equalTo(1)
+            make.right.equalTo(btn1.snp.left).offset(-15)
+        }
+        btn1.snp.makeConstraints { (make) in
+            make.centerY.equalTo(titleLb1)
+            make.right.equalToSuperview().offset(-15)
+            make.height.equalTo(25)
+            make.width.equalTo(80)
+        }
+        btn2.snp.makeConstraints { (make) in
+            make.centerY.equalTo(titleLb2)
+            make.right.equalToSuperview().offset(-15)
+            make.height.equalTo(25)
+            make.width.equalTo(80)
+        }
+        
+        latitudeLb.snp.makeConstraints { (make) in
+            make.centerY.equalTo(titleLb1)
+            make.left.equalTo(titleLb1.snp.right).offset(10)
+            make.right.equalTo(btn1.snp.left).offset(-15)
+        }
+        longitudeLb.snp.makeConstraints { (make) in
+            make.centerY.equalTo(titleLb2)
+            make.left.equalTo(titleLb2.snp.right).offset(10)
+            make.right.equalTo(btn2.snp.left).offset(-15)
+        }
+        
+        return locationView
     }
     func createInputView() -> UIView {
         let inputView = UIView()
@@ -170,11 +290,6 @@ class PNPublishView: UIView {
         var tmpView:UIView?
         for dic in arr {
             let view = UIView()
-            
-            if (dic["title"] as! String) == "地点标签:" {
-                let tap = UITapGestureRecognizer(target: self, action: #selector(selectTagAction))
-                view.addGestureRecognizer(tap)
-            }
             
             let titleLb = UILabel()
             titleLb.textColor = UIColor.black
@@ -197,12 +312,39 @@ class PNPublishView: UIView {
                 make.left.equalToSuperview().offset(25)
                 make.centerY.equalToSuperview()
             }
-            (dic["content"] as! UIView).snp.makeConstraints { (make) in
-                make.left.equalTo(titleLb.snp.right).offset(10)
-                make.top.equalToSuperview().offset(15)
-                make.bottom.equalToSuperview().offset(-15)
-                make.right.equalToSuperview().offset(-15)
+            if (dic["title"] as! String) == "地点标签:" {
+                
+                let btn1 = UIButton(type: UIButtonType.custom)
+                btn1.setTitle("选择标签", for: UIControlState.normal)
+                btn1.backgroundColor = UIColor.black
+                btn1.layer.cornerRadius = 5
+                btn1.layer.masksToBounds = true
+                btn1.titleLabel?.font = FontSize14
+                btn1.addTarget(self, action: #selector(selectTagAction), for: UIControlEvents.touchUpInside)
+                
+                view.addSubview(btn1)
+                
+                (dic["content"] as! UIView).snp.makeConstraints { (make) in
+                    make.left.equalTo(titleLb.snp.right).offset(10)
+                    make.top.equalToSuperview().offset(15)
+                    make.bottom.equalToSuperview().offset(-15)
+                    make.right.equalTo(btn1.snp.left).offset(-15)
+                }
+                btn1.snp.makeConstraints { (make) in
+                    make.centerY.equalTo((dic["content"] as! UIView).snp.centerY)
+                    make.height.equalTo(25)
+                    make.width.equalTo(80)
+                    make.right.equalToSuperview().offset(-15)
+                }
+            }else{
+                (dic["content"] as! UIView).snp.makeConstraints { (make) in
+                    make.left.equalTo(titleLb.snp.right).offset(10)
+                    make.top.equalToSuperview().offset(15)
+                    make.bottom.equalToSuperview().offset(-15)
+                    make.right.equalToSuperview().offset(-15)
+                }
             }
+            
             grayLine.snp.makeConstraints { (make) in
                 make.left.right.bottom.equalToSuperview()
                 make.height.equalTo(1)
@@ -361,6 +503,16 @@ extension PNPublishView {
     }
     @objc func selectTagAction() {
         if let block = selectTagBlock {
+            block()
+        }
+    }
+    @objc func selectCurrentLocationAction() {
+        if let block = selectCurrentLocationBlock {
+            block()
+        }
+    }
+    @objc func selectLocationFromMapAction() {
+        if let block = selectLocationFromMapBlock {
             block()
         }
     }

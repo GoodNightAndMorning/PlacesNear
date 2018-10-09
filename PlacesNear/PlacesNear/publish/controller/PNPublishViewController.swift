@@ -28,12 +28,52 @@ class PNPublishViewController: SZViewController {
 // MARK: - 初始化事件
 extension PNPublishViewController {
     func initEvents() {
-        allView.submitBtn.clickBtnBlock = {
+        allView.submitBtn.willClickBtnBlock = {
             //TODO:点击提交按钮事件
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-                self.allView.submitBtn.endAnimation(state: PNSubmitButton.SubmitState.failuer)
-            })
+            
+            guard let placeName = self.allView.placeNameTf.text else {
+                PNHud.shareInstance.showHud(message: "请输入地点名称", delay: 2, dismissBlock: nil)
+                return
+            }
+            if placeName.count == 0 {
+                PNHud.shareInstance.showHud(message: "请输入地点名称", delay: 2, dismissBlock: nil)
+            }
+            
+            guard let tagName = self.allView.placeTagTf.text else {
+                PNHud.shareInstance.showHud(message: "请输入地点标签", delay: 2, dismissBlock: nil)
+                return
+            }
+            if tagName.count == 0 {
+                PNHud.shareInstance.showHud(message: "请输入地点标签", delay: 2, dismissBlock: nil)
+            }
+            
+            guard let latitude = self.allView.latitudeLb.text else {
+                PNHud.shareInstance.showHud(message: "请选择地点位置", delay: 2, dismissBlock: nil)
+                return
+            }
+            guard let longitude = self.allView.longitudeLb.text else {
+                PNHud.shareInstance.showHud(message: "请选择地点位置", delay: 2, dismissBlock: nil)
+                return
+            }
+            if latitude.count == 0 || longitude.count == 0{
+                PNHud.shareInstance.showHud(message: "请选择地点位置", delay: 2, dismissBlock: nil)
+            }
+            
+            
+            let phone = self.allView.placePhoneTf.text
+            
+            let desc = self.allView.descTv.text
+            
+            self.allView.submitBtn.beginAnimate()
+            
+            self.allView.submitBtn.clickBtnBlock = {
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+                    self.allView.submitBtn.endAnimation(state: PNSubmitButton.SubmitState.failuer)
+                })
+            }
         }
+        
         allView.submitBtn.finishBlock = {
             //TODO:按钮动画结束事件
             
@@ -62,6 +102,23 @@ extension PNPublishViewController {
                 tagName in
                 self.allView.placeTagTf.text = tagName
             }
+        }
+        allView.selectCurrentLocationBlock = {
+            //TODO:选择当前地址
+            self.allView.latitudeLb.text = String(format: "%f", PNLocation.shareInstance.latitude!)
+            self.allView.longitudeLb.text = String(format: "%f", PNLocation.shareInstance.longitude!)
+        }
+        allView.selectLocationFromMapBlock = {
+            //TODO:在地图上选择地址
+            let vc = PNPublishLoationViewController()
+            
+            vc.selectLocationBlock = {
+                (latitude, longitude) in
+                self.allView.latitudeLb.text = String(format: "%f", latitude)
+                self.allView.longitudeLb.text = String(format: "%f", longitude)
+            }
+            
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     @objc func textFieldDidChange(textField:UITextField) {
