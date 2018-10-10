@@ -22,4 +22,5 @@ target 'PlacesNear' do
   pod 'HandyJSON', '4.0.0-beta.1'
   pod 'BaiduMapKit', '~> 3.3.4'
   pod 'mob_smssdk'
+  pod 'MJRefresh'
 end

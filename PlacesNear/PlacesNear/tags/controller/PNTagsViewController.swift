@@ -11,9 +11,15 @@ import UIKit
 let PNTagsTableViewCellIdentifier = "PNTagsTableViewCell"
 class PNTagsViewController: SZViewController {
 
-    var selectTagBlock:((_ :String) -> ())?
+    let viewModel:PNTagsViewModel = PNTagsViewModel()
     
-    let tags:[String] = ["公交站","地铁站","电动车维修店","四儿子店","商业广场","垃圾回收站","医院","诊所","银行","派出所","ATM"]
+    lazy var pageParams:PNPageParams = {
+        let params = PNPageParams()
+        params.pageSize = 10
+        return params
+    }()
+    
+    var selectTagBlock:((PNGetTagsListModel) -> ())?
     
     lazy var mainTableView:UITableView = {
         let tv = UITableView(frame: self.view.bounds, style: UITableViewStyle.plain)
@@ -31,21 +37,49 @@ class PNTagsViewController: SZViewController {
         super.viewDidLoad()
         self.title = "所有标签"
         self.view.addSubview(mainTableView)
+        
+        mainTableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
+            self.getTagsList(isRefresh: true)
+        })
+        mainTableView.mj_footer = MJRefreshBackNormalFooter(refreshingBlock: {
+            self.getTagsList(isRefresh: false)
+        })
+        
+        viewModel.getTagsListBlock = {
+            isAllLoad in
+            
+            self.mainTableView.mj_header.endRefreshing()
+            self.mainTableView.mj_footer.endRefreshing()
+            
+            self.mainTableView.mj_footer.isHidden = isAllLoad
+            
+            self.mainTableView.reloadData()
+        }
+        getTagsList(isRefresh: true)
+    }
+    func getTagsList(isRefresh:Bool) {
+        if isRefresh {
+            pageParams.pageNum = 1
+        }else{
+            pageParams.pageNum = pageParams.pageNum! + 1
+        }
+        
+        viewModel.getTagsList(params: pageParams)
     }
 }
 extension PNTagsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tags.count
+        return viewModel.tagsArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:PNTagsTableViewCell = tableView.dequeueReusableCell(withIdentifier: PNTagsTableViewCellIdentifier) as! PNTagsTableViewCell
-        cell.setTags(tagName: tags[indexPath.row])
+        cell.setTags(tagName: viewModel.tagsArr[indexPath.row].name!)
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let block = selectTagBlock {
-            block(tags[indexPath.row])
+            block(viewModel.tagsArr[indexPath.row])
         }
         
         self.navigationController?.popViewController(animated: true)

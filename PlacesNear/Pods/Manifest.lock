@@ -2,15 +2,17 @@ PODS:
   - Alamofire (4.5.1)
   - BaiduMapKit (3.3.4)
   - HandyJSON (4.0.0-beta.1)
-  - mob_smssdk (3.2.1):
+  - MJRefresh (3.1.15.1)
+  - mob_smssdk (0.0.1):
     - MOBFoundation
-  - MOBFoundation (3.1.9)
+  - MOBFoundation (3.0.6)
   - SnapKit (4.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - BaiduMapKit (~> 3.3.4)
   - HandyJSON (= 4.0.0-beta.1)
+  - MJRefresh
   - mob_smssdk
   - SnapKit
 
@@ -19,6 +21,7 @@ SPEC REPOS:
     - Alamofire
     - BaiduMapKit
     - HandyJSON
+    - MJRefresh
     - mob_smssdk
     - MOBFoundation
     - SnapKit
@@ -27,10 +30,11 @@ SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   BaiduMapKit: 6f2d76a04b72e9af938afb5ca0f97d4417bbf9c0
   HandyJSON: 428bb18e2c34c2a77361accebf90cf64e4f74118
-  mob_smssdk: edc462704cc07c6d245eee16c4c09ac4f4d53e61
-  MOBFoundation: 11500153c10d83e4ac341f6ad6301b3998ce6db2
+  MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
+  mob_smssdk: f155ca3d32a2e4fc5ac06e30cdb1508566b8b9cd
+  MOBFoundation: 6f6ec1c2513278551f1a808b5692e983d99e5069
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: a143927497148e0a376e1a7adbd5654dc97b89a3
+PODFILE CHECKSUM: 73363e8f2c994bf3390e614a7019a46d9e4e0b82
 
 COCOAPODS: 1.5.3

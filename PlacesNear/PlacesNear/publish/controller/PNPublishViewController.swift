@@ -14,6 +14,8 @@ class PNPublishViewController: SZViewController {
     
     var photos:[UIImage] = [UIImage]()
     
+    var tag:PNGetTagsListModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -110,8 +112,9 @@ extension PNPublishViewController {
             let vc = PNTagsViewController()
             self.navigationController?.pushViewController(vc, animated: true)
             vc.selectTagBlock = {
-                tagName in
-                self.allView.placeTagTf.text = tagName
+                tag in
+                self.tag = tag
+                self.allView.placeTagTf.text = tag.name
             }
         }
         allView.selectCurrentLocationBlock = {

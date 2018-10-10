@@ -12,6 +12,8 @@ class PNLoginViewController: SZViewController {
 
     let allViews:PNLoginView = PNLoginView()
     
+    let viewModel:PNLoginViewModel = PNLoginViewModel()
+    
     var seconds:Int = 60
     
     var timer:Timer!
@@ -48,20 +50,20 @@ extension PNLoginViewController {
                 return
             }
             
-            SMSSDK.getVerificationCode(by: SMSGetCodeMethod.SMS, phoneNumber: phone, zone: "86", result: { (error) in
-                guard error != nil else {
-                    
-                    self.seconds = 60
-                    
-                    self.allViews.sendBtn.isEnabled = false
-                    self.allViews.sendBtn.setTitle("\(self.seconds)s", for: UIControlState.normal)
-                    
-                    self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.countDownAction), userInfo: nil, repeats: true)
-                    
-                    return
-                }
-                PNHud.shareInstance.showHud(message: "发送验证码失败", delay: 1.5, dismissBlock: nil)
-            })
+//            SMSSDK.getVerificationCode(by: SMSGetCodeMethod.SMS, phoneNumber: phone, zone: "86", result: { (error) in
+//                guard error != nil else {
+//
+//                    self.seconds = 60
+//
+//                    self.allViews.sendBtn.isEnabled = false
+//                    self.allViews.sendBtn.setTitle("\(self.seconds)s", for: UIControlState.normal)
+//
+//                    self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.countDownAction), userInfo: nil, repeats: true)
+//
+//                    return
+//                }
+//                PNHud.shareInstance.showHud(message: "发送验证码失败", delay: 1.5, dismissBlock: nil)
+//            })
         }
         allViews.loginBlock = {
             //TODO:登录
@@ -69,14 +71,30 @@ extension PNLoginViewController {
                 PNHud.shareInstance.showHud(message: "请输入验证码", delay: 1.5, dismissBlock: nil)
                 return
             }
-            SMSSDK.commitVerificationCode(self.allViews.codeTf.text, phoneNumber: self.allViews.phoneTf.text, zone: "86", result: { (error) in
-                if error == nil {
-                    //TODO:验证码验证成功
+            
+            
+//            SMSSDK.commitVerificationCode(self.allViews.codeTf.text, phoneNumber: self.allViews.phoneTf.text, zone: "86", result: { (error) in
+//                if error == nil {
+//                    //TODO:验证码验证成功
+//                    self.navigationController?.popViewController(animated: true)
+//                }else{
+//                    PNHud.shareInstance.showHud(message: "验证码错误", delay: 1.5, dismissBlock: nil)
+//                }
+//            })
+            
+            self.viewModel.login(name: self.allViews.phoneTf.text!)
+            self.viewModel.loginBlock = {
+                PNUser.shareInstance.id = self.viewModel.loginModel.id
+                PNUser.shareInstance.name = self.viewModel.loginModel.name
+                PNUser.shareInstance.nickName = self.viewModel.loginModel.nickName
+                PNUser.shareInstance.token = self.viewModel.loginModel.token
+                
+                PNUser.shareInstance.saveUserToUserDefaults()
+                
+                PNHud.shareInstance.showHud(message: "登录成功", delay: 1, dismissBlock: {
                     self.navigationController?.popViewController(animated: true)
-                }else{
-                    PNHud.shareInstance.showHud(message: "验证码错误", delay: 1.5, dismissBlock: nil)
-                }
-            })
+                })
+            }
         }
     }
     @objc func countDownAction() {

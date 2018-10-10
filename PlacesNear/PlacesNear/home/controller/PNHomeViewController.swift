@@ -18,6 +18,8 @@ class PNHomeViewController: SZViewController {
     
     var searchRadius:Double = 1.0
     
+    var tag:PNGetTagsListModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -78,9 +80,11 @@ extension PNHomeViewController {
             self.navigationController?.pushViewController(vc, animated: true)
             
             vc.selectTagBlock = {
-                tagName in
+                tag in
                 //TODO:所有标签页面回调事件
-                self.allViews.titleLb.text = tagName
+                self.tag = tag
+                
+                self.allViews.titleLb.text = tag.name
                 
                 self.allViews.titleIcon.image = UIImage(named: "arrows_down")
             }

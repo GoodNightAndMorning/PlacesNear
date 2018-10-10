@@ -43,6 +43,13 @@
 		07A9FAC7216CE5C600CE3DFF /* PNLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A9FAC6216CE5C600CE3DFF /* PNLocation.swift */; };
 		07A9FAC9216CE84400CE3DFF /* PNPublishLoationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A9FAC8216CE84400CE3DFF /* PNPublishLoationViewController.swift */; };
 		07A9FACB216CEF8E00CE3DFF /* PNHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A9FACA216CEF8E00CE3DFF /* PNHud.swift */; };
+		07A9FACE216E29B600CE3DFF /* PNLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A9FACD216E29B600CE3DFF /* PNLoginViewModel.swift */; };
+		07A9FAD0216E2CCC00CE3DFF /* PNLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A9FACF216E2CCC00CE3DFF /* PNLoginModel.swift */; };
+		07A9FAD3216E394000CE3DFF /* PNPublishViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A9FAD2216E394000CE3DFF /* PNPublishViewModel.swift */; };
+		07A9FAD6216E449A00CE3DFF /* PNPagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A9FAD5216E449A00CE3DFF /* PNPagesModel.swift */; };
+		07A9FAD9216E45F600CE3DFF /* PNTagsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A9FAD8216E45F600CE3DFF /* PNTagsViewModel.swift */; };
+		07A9FADB216E469000CE3DFF /* PNPageParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A9FADA216E469000CE3DFF /* PNPageParams.swift */; };
+		07A9FADD216E478500CE3DFF /* PNGetTagsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A9FADC216E478500CE3DFF /* PNGetTagsListModel.swift */; };
 		182823B4216B2ABA007ED877 /* PNMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182823B3216B2ABA007ED877 /* PNMapView.swift */; };
 		182823B6216B3036007ED877 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182823B5216B3036007ED877 /* CoreLocation.framework */; };
 		182823B8216B303F007ED877 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182823B7216B303F007ED877 /* QuartzCore.framework */; };
@@ -150,6 +157,13 @@
 		07A9FAC6216CE5C600CE3DFF /* PNLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNLocation.swift; sourceTree = "<group>"; };
 		07A9FAC8216CE84400CE3DFF /* PNPublishLoationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNPublishLoationViewController.swift; sourceTree = "<group>"; };
 		07A9FACA216CEF8E00CE3DFF /* PNHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNHud.swift; sourceTree = "<group>"; };
+		07A9FACD216E29B600CE3DFF /* PNLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNLoginViewModel.swift; sourceTree = "<group>"; };
+		07A9FACF216E2CCC00CE3DFF /* PNLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNLoginModel.swift; sourceTree = "<group>"; };
+		07A9FAD2216E394000CE3DFF /* PNPublishViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNPublishViewModel.swift; sourceTree = "<group>"; };
+		07A9FAD5216E449A00CE3DFF /* PNPagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNPagesModel.swift; sourceTree = "<group>"; };
+		07A9FAD8216E45F600CE3DFF /* PNTagsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNTagsViewModel.swift; sourceTree = "<group>"; };
+		07A9FADA216E469000CE3DFF /* PNPageParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNPageParams.swift; sourceTree = "<group>"; };
+		07A9FADC216E478500CE3DFF /* PNGetTagsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNGetTagsListModel.swift; sourceTree = "<group>"; };
 		0CFC47869785D030F8EED2AA /* Pods-PlacesNear.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlacesNear.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlacesNear/Pods-PlacesNear.debug.xcconfig"; sourceTree = "<group>"; };
 		103B54AC3069FF5CBBA250D8 /* Pods_PlacesNearTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlacesNearTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		182823B3216B2ABA007ED877 /* PNMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNMapView.swift; sourceTree = "<group>"; };
@@ -344,6 +358,38 @@
 			path = image;
 			sourceTree = "<group>";
 		};
+		07A9FACC216E299700CE3DFF /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				07A9FACD216E29B600CE3DFF /* PNLoginViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		07A9FAD1216E392600CE3DFF /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				07A9FAD2216E394000CE3DFF /* PNPublishViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		07A9FAD4216E447500CE3DFF /* params */ = {
+			isa = PBXGroup;
+			children = (
+				07A9FADA216E469000CE3DFF /* PNPageParams.swift */,
+			);
+			path = params;
+			sourceTree = "<group>";
+		};
+		07A9FAD7216E45DD00CE3DFF /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				07A9FAD8216E45F600CE3DFF /* PNTagsViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
 		182823B2216B2AA7007ED877 /* map */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +405,7 @@
 		1828240F216DA833007ED877 /* login */ = {
 			isa = PBXGroup;
 			children = (
+				07A9FACC216E299700CE3DFF /* viewModel */,
 				18282414216DA8A9007ED877 /* view */,
 				18282413216DA8A1007ED877 /* model */,
 				18282412216DA892007ED877 /* controller */,
@@ -466,7 +513,7 @@
 				0710E333215FC23600540EC8 /* extension */,
 				18DF3D1B215F0E0C00514E89 /* request */,
 				18DF3D1A215F0DFE00514E89 /* model */,
-				18DF3D19215F0DF500514E89 /* params */,
+				07A9FAD4216E447500CE3DFF /* params */,
 				185869D6215C803D0073BAAE /* Constant.swift */,
 				185869D8215C84A10073BAAE /* PlacesNear-Bridging-Header.h */,
 			);
@@ -499,17 +546,13 @@
 			path = viewModel;
 			sourceTree = "<group>";
 		};
-		18DF3D19215F0DF500514E89 /* params */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = params;
-			sourceTree = "<group>";
-		};
 		18DF3D1A215F0DFE00514E89 /* model */ = {
 			isa = PBXGroup;
 			children = (
 				18282403216C954F007ED877 /* PNPlaceModel.swift */,
+				07A9FACF216E2CCC00CE3DFF /* PNLoginModel.swift */,
+				07A9FAD5216E449A00CE3DFF /* PNPagesModel.swift */,
+				07A9FADC216E478500CE3DFF /* PNGetTagsListModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -526,6 +569,7 @@
 		18DF3D20215F245900514E89 /* tags */ = {
 			isa = PBXGroup;
 			children = (
+				07A9FAD7216E45DD00CE3DFF /* viewModel */,
 				18DF3D22215F247B00514E89 /* view */,
 				18DF3D21215F247200514E89 /* controller */,
 			);
@@ -551,6 +595,7 @@
 		18DF3D27215F481800514E89 /* publish */ = {
 			isa = PBXGroup;
 			children = (
+				07A9FAD1216E392600CE3DFF /* viewModel */,
 				0710E3422160FC6200540EC8 /* model */,
 				18DF3D29215F485300514E89 /* view */,
 				18DF3D28215F482800514E89 /* controller */,
@@ -790,12 +835,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-PlacesNear/Pods-PlacesNear-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -865,6 +912,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0710E3442160FC9600540EC8 /* PNPhotoModel.swift in Sources */,
+				07A9FAD9216E45F600CE3DFF /* PNTagsViewModel.swift in Sources */,
 				18DF3D2B215F486E00514E89 /* PNPublishViewController.swift in Sources */,
 				1828240A216CA590007ED877 /* PNPaopaoView.swift in Sources */,
 				0710E37A2161060000540EC8 /* NHAlbumsView.m in Sources */,
@@ -876,6 +924,7 @@
 				18282406216C96DA007ED877 /* PNAnnotation.swift in Sources */,
 				0710E33B2160F2A100540EC8 /* SZViewController.swift in Sources */,
 				07A9FAC9216CE84400CE3DFF /* PNPublishLoationViewController.swift in Sources */,
+				07A9FAD3216E394000CE3DFF /* PNPublishViewModel.swift in Sources */,
 				18DF3D18215F0D4900514E89 /* PNTagsView.swift in Sources */,
 				18282411216DA863007ED877 /* PNLoginViewController.swift in Sources */,
 				18DF3D1F215F0E3900514E89 /* SXRequest.swift in Sources */,
@@ -889,10 +938,13 @@
 				185869D0215C71D10073BAAE /* PNHomeViewController.swift in Sources */,
 				18DF3D1E215F0E3900514E89 /* SXModel.swift in Sources */,
 				18DF3D2F215F526800514E89 /* PNPublishView.swift in Sources */,
+				07A9FAD0216E2CCC00CE3DFF /* PNLoginModel.swift in Sources */,
 				0710E337215FC26300540EC8 /* UITextFieldExtension.swift in Sources */,
+				07A9FADD216E478500CE3DFF /* PNGetTagsListModel.swift in Sources */,
 				1828241C216DF649007ED877 /* UIViewControllerExtension.swift in Sources */,
 				18282408216C99B8007ED877 /* PNAnnotationView.swift in Sources */,
 				182823B4216B2ABA007ED877 /* PNMapView.swift in Sources */,
+				07A9FAD6216E449A00CE3DFF /* PNPagesModel.swift in Sources */,
 				0710E336215FC26300540EC8 /* UITextViewExtension.swift in Sources */,
 				18DF3D2D215F4B5D00514E89 /* PNSubmitButton.swift in Sources */,
 				07A9FAC7216CE5C600CE3DFF /* PNLocation.swift in Sources */,
@@ -902,8 +954,10 @@
 				0710E36E2161060000540EC8 /* NHHasSelectPhotoCollectionViewCell.m in Sources */,
 				0710E37B2161060000540EC8 /* NHAlbumsTableViewCell.m in Sources */,
 				18DF3D16215E27BA00514E89 /* PNDistanceRulerView.swift in Sources */,
+				07A9FACE216E29B600CE3DFF /* PNLoginViewModel.swift in Sources */,
 				18DF3D14215E0D8F00514E89 /* PNAnimationButton.swift in Sources */,
 				0710E3782161060000540EC8 /* SXCameraViewController.m in Sources */,
+				07A9FADB216E469000CE3DFF /* PNPageParams.swift in Sources */,
 				0710E33A2160F2A100540EC8 /* SZNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

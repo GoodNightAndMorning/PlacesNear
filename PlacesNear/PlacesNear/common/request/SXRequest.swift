@@ -31,6 +31,8 @@ public class SXRequest: NSObject {
             
             if let res = JSONDeserializer<SXModel>.deserializeFrom(json: response.value){
                 successBlock(res)
+            } else {
+                PNHud.shareInstance.showHud(message: "请求失败", delay: 1.5, dismissBlock: nil)
             }
             print("==============================================")
         })
@@ -53,6 +55,8 @@ public class SXRequest: NSObject {
             
             if let res = JSONDeserializer<SXModel>.deserializeFrom(json: response.value){
                 successBlock(res)
+            } else {
+                PNHud.shareInstance.showHud(message: "请求失败", delay: 1.5, dismissBlock: nil)
             }
             print("==============================================")
         })
@@ -74,7 +78,20 @@ public class SXRequest: NSObject {
 }
 // MARK: - 接口请求
 extension SXRequest {
-
+    
+    /// 登录请求
+    ///
+    /// - Parameters:
+    ///   - params: 手机号码
+    ///   - successBlock: block
+    public static func login(params:String, successBlock:@escaping SuccessBlock) {
+        
+        postRequest(url: DomainName + "user/login", params: ["userName": params], successBlock: successBlock)
+    }
+    public static func getTagsList(params:NSObject, successBlock:@escaping SuccessBlock){
+        let p:[String:Any] = convertModelToDic(m: params)
+        getRequest(url: DomainName + "places/getTagsList", params: p, successBlock: successBlock)
+    }
 //    public static func getSystemMsg(params:NSObject, successBlock:@escaping SuccessBlock) {
 //
 //        let p:[String:Any] = convertModelToDic(m: params)

@@ -11,7 +11,7 @@ import UIKit
 class PNUser: NSObject {
     static let shareInstance = PNUser()
     
-    var id:String?
+    var id:Int?
     var name:String?
     var nickName:String?
     var token:String?
@@ -20,14 +20,14 @@ class PNUser: NSObject {
         guard let dic = UserDefaults.standard.dictionary(forKey: "UserInfoKey") else {
             return
         }
-        id = dic["id"] as? String;
+        id = (dic["id"] as? NSNumber)?.intValue;
         name = dic["name"] as? String;
         nickName = dic["nickName"] as? String
         token = dic["token"] as? String
     }
     func saveUserToUserDefaults() {
-        var dic:[String:String] = [String:String]()
-        dic["id"] = id
+        var dic:[String:Any] = [String:String]()
+        dic["id"] = NSNumber(value: id!)
         dic["name"] = name
         dic["nickName"] = name
         dic["token"] = token
