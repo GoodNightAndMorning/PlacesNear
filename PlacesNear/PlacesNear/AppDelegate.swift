@@ -28,10 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.statusBarStyle = UIStatusBarStyle.lightContent
         
         _mapManager = BMKMapManager()
-        let ret = _mapManager.start(PNMapKey, generalDelegate: self)
+        let ret = _mapManager.start(BMKMapKey, generalDelegate: self)
         if !ret {
             print("map manager start failed!")
         }
+        
+        PNUser.shareInstance.setUserFromUserDefaults()
         
         return true
     }

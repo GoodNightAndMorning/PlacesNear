@@ -13,7 +13,10 @@ import SnapKit
 import Alamofire
 
 //百度地图Key
-let PNMapKey = "kLwAqa0V9Y173L5brL1fiP0ITTUEYecL"
+let BMKMapKey = "kLwAqa0V9Y173L5brL1fiP0ITTUEYecL"
+//Mob
+let MobAppKey = "28082eaa08b99"
+let MobAppSecret = "e6d599beccaff8cc20711151761805ff"
 
 let KScreenWidth = UIScreen.main.bounds.size.width
 let kScreenHeight = UIScreen.main.bounds.size.height

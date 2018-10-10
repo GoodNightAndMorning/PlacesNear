@@ -30,6 +30,10 @@ class PNPublishLoationViewController: SZViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "选择", style: UIBarButtonItemStyle.plain, target: self, action: #selector(selectAction))
         
         initUi()
+        mapView.didFinishLoadingBlock = {
+            self.mapView.setCenter(radius: 1.0)
+        }
+        
     }
     @objc func selectAction() {
         if let block = selectLocationBlock {

@@ -60,6 +60,9 @@
 		18282406216C96DA007ED877 /* PNAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18282405216C96DA007ED877 /* PNAnnotation.swift */; };
 		18282408216C99B8007ED877 /* PNAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18282407216C99B8007ED877 /* PNAnnotationView.swift */; };
 		1828240A216CA590007ED877 /* PNPaopaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18282409216CA590007ED877 /* PNPaopaoView.swift */; };
+		18282411216DA863007ED877 /* PNLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18282410216DA863007ED877 /* PNLoginViewController.swift */; };
+		18282416216DA8DD007ED877 /* PNUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18282415216DA8DD007ED877 /* PNUser.swift */; };
+		18282418216DAF48007ED877 /* PNLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18282417216DAF48007ED877 /* PNLoginView.swift */; };
 		185869A1215C71880073BAAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185869A0215C71880073BAAE /* AppDelegate.swift */; };
 		185869A8215C71890073BAAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185869A7215C71890073BAAE /* Assets.xcassets */; };
 		185869B6215C71890073BAAE /* PlacesNearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185869B5215C71890073BAAE /* PlacesNearTests.swift */; };
@@ -162,6 +165,9 @@
 		18282405216C96DA007ED877 /* PNAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNAnnotation.swift; sourceTree = "<group>"; };
 		18282407216C99B8007ED877 /* PNAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNAnnotationView.swift; sourceTree = "<group>"; };
 		18282409216CA590007ED877 /* PNPaopaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNPaopaoView.swift; sourceTree = "<group>"; };
+		18282410216DA863007ED877 /* PNLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNLoginViewController.swift; sourceTree = "<group>"; };
+		18282415216DA8DD007ED877 /* PNUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNUser.swift; sourceTree = "<group>"; };
+		18282417216DAF48007ED877 /* PNLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNLoginView.swift; sourceTree = "<group>"; };
 		1858699D215C71880073BAAE /* PlacesNear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlacesNear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		185869A0215C71880073BAAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		185869A7215C71890073BAAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -344,6 +350,40 @@
 			path = map;
 			sourceTree = "<group>";
 		};
+		1828240F216DA833007ED877 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				18282414216DA8A9007ED877 /* view */,
+				18282413216DA8A1007ED877 /* model */,
+				18282412216DA892007ED877 /* controller */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		18282412216DA892007ED877 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				18282410216DA863007ED877 /* PNLoginViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		18282413216DA8A1007ED877 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				18282415216DA8DD007ED877 /* PNUser.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		18282414216DA8A9007ED877 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				18282417216DAF48007ED877 /* PNLoginView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		18586994215C71880073BAAE = {
 			isa = PBXGroup;
 			children = (
@@ -370,11 +410,12 @@
 			isa = PBXGroup;
 			children = (
 				182823CF216B5691007ED877 /* mapapi.bundle */,
-				182823B2216B2AA7007ED877 /* map */,
 				185869D5215C80080073BAAE /* common */,
+				182823B2216B2AA7007ED877 /* map */,
 				185869CE215C71B50073BAAE /* home */,
 				18DF3D20215F245900514E89 /* tags */,
 				18DF3D27215F481800514E89 /* publish */,
+				1828240F216DA833007ED877 /* login */,
 				185869A0215C71880073BAAE /* AppDelegate.swift */,
 				185869A7215C71890073BAAE /* Assets.xcassets */,
 				185869AC215C71890073BAAE /* Info.plist */,
@@ -822,17 +863,20 @@
 				0710E37A2161060000540EC8 /* NHAlbumsView.m in Sources */,
 				185869A1215C71880073BAAE /* AppDelegate.swift in Sources */,
 				18DF3D24215F24A300514E89 /* PNTagsViewController.swift in Sources */,
+				18282418216DAF48007ED877 /* PNLoginView.swift in Sources */,
 				07A9FACB216CEF8E00CE3DFF /* PNHud.swift in Sources */,
 				18586A35215DF8B80073BAAE /* PNHomeView.swift in Sources */,
 				18282406216C96DA007ED877 /* PNAnnotation.swift in Sources */,
 				0710E33B2160F2A100540EC8 /* SZViewController.swift in Sources */,
 				07A9FAC9216CE84400CE3DFF /* PNPublishLoationViewController.swift in Sources */,
 				18DF3D18215F0D4900514E89 /* PNTagsView.swift in Sources */,
+				18282411216DA863007ED877 /* PNLoginViewController.swift in Sources */,
 				18DF3D1F215F0E3900514E89 /* SXRequest.swift in Sources */,
 				0710E36F2161060000540EC8 /* SXTakePhotoView.m in Sources */,
 				0710E3842161060000540EC8 /* SXPhotoPickerViewController.m in Sources */,
 				0710E3792161060000540EC8 /* NHPhotoPickerModel.m in Sources */,
 				0710E38A2161160800540EC8 /* StringExtension.swift in Sources */,
+				18282416216DA8DD007ED877 /* PNUser.swift in Sources */,
 				0710E36C2161060000540EC8 /* NHHasSelectPhotosView.m in Sources */,
 				0710E36D2161060000540EC8 /* NHPhotosPickerCollectionViewCell.m in Sources */,
 				185869D0215C71D10073BAAE /* PNHomeViewController.swift in Sources */,

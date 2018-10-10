@@ -14,5 +14,7 @@
 #import <BaiduMapAPI_Map/BMKMapView.h>//只引入所需的单个头文件
 #import <BaiduMapAPI_Location/BMKLocationComponent.h>
 
+#import <SMS_SDK/SMSSDK.h>
+
 #import "SXPhotoPickerViewController.h"
 #import "NHPhotoPickerModel.h"

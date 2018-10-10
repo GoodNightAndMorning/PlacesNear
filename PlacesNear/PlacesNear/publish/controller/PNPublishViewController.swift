@@ -31,12 +31,21 @@ extension PNPublishViewController {
         allView.submitBtn.willClickBtnBlock = {
             //TODO:点击提交按钮事件
             
+            if PNUser.shareInstance.name == nil || PNUser.shareInstance.name?.count == 0 {
+                PNHud.shareInstance.showHud(message: "请先登录", delay: 2, dismissBlock: {
+                    let vc = PNLoginViewController()
+                    self.navigationController?.pushViewController(vc, animated: true)
+                })
+                return
+            }
+            
             guard let placeName = self.allView.placeNameTf.text else {
                 PNHud.shareInstance.showHud(message: "请输入地点名称", delay: 2, dismissBlock: nil)
                 return
             }
             if placeName.count == 0 {
                 PNHud.shareInstance.showHud(message: "请输入地点名称", delay: 2, dismissBlock: nil)
+                return
             }
             
             guard let tagName = self.allView.placeTagTf.text else {
@@ -45,6 +54,7 @@ extension PNPublishViewController {
             }
             if tagName.count == 0 {
                 PNHud.shareInstance.showHud(message: "请输入地点标签", delay: 2, dismissBlock: nil)
+                return
             }
             
             guard let latitude = self.allView.latitudeLb.text else {
@@ -57,6 +67,7 @@ extension PNPublishViewController {
             }
             if latitude.count == 0 || longitude.count == 0{
                 PNHud.shareInstance.showHud(message: "请选择地点位置", delay: 2, dismissBlock: nil)
+                return
             }
             
             

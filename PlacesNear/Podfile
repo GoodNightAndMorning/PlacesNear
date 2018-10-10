@@ -20,6 +20,6 @@ target 'PlacesNear' do
   pod 'Alamofire'
   pod 'SnapKit'
   pod 'HandyJSON', '4.0.0-beta.1'
-
   pod 'BaiduMapKit', '~> 3.3.4'
+  pod 'mob_smssdk'
 end
