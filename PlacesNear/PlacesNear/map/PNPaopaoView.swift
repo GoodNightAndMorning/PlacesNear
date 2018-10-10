@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MapKit
 class PNPaopaoView: UIView {
 
     var placeModel:PNPlaceModel = PNPlaceModel()
@@ -37,7 +37,9 @@ class PNPaopaoView: UIView {
         lb.textColor = UIColor.white
         lb.font = FontSize12
         lb.text = "路线导航>>"
-        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(navigationAction))
+        lb.addGestureRecognizer(tap)
+        lb.isUserInteractionEnabled = true
         return lb
     }()
     
@@ -55,9 +57,6 @@ class PNPaopaoView: UIView {
         self.isUserInteractionEnabled = true
         self.backgroundColor = UIColor.clear
         self.frame = CGRect(x: 0, y: 0, width: 120, height: 5 * 3 + 14 * 1)
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(clickPaopaoViewAction))
-        self.addGestureRecognizer(tap)
         
         self.layer.masksToBounds = true
     }
@@ -141,7 +140,7 @@ extension PNPaopaoView {
     @objc func clickPaopaoViewAction()  {
         if isOpen {
             UIView.animate(withDuration: 0.3) {
-                self.frame = CGRect(x: 0, y: 0, width: 120, height: 5 * 5 + 14 * 3)
+                self.frame = CGRect(x: 0, y: -38, width: 120, height: 5 * 5 + 14 * 3)
             }
         }else{
             UIView.animate(withDuration: 0.3) {
@@ -151,4 +150,25 @@ extension PNPaopaoView {
         self.setNeedsDisplay()
         isOpen = !isOpen
     }
+    @objc func navigationAction() {
+        let alert = UIAlertController(title: "打开地图导航", message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
+        let startLocation = CLLocationCoordinate2D(latitude: placeModel.latitude!, longitude: placeModel.longitude!)
+        let endLocation = CLLocationCoordinate2D(latitude: PNLocation.shareInstance.latitude!, longitude: PNLocation.shareInstance.longitude!)
+        
+        let action = UIAlertAction(title: "苹果地图", style: UIAlertActionStyle.default) { (action) in
+            let currentLocation = MKMapItem(placemark: MKPlacemark(coordinate: startLocation, addressDictionary: nil))
+            currentLocation.name = "我的位置"
+            let toLocation = MKMapItem(placemark: MKPlacemark(coordinate: endLocation, addressDictionary: nil))
+            toLocation.name = self.placeModel.name
+            MKMapItem.openMaps(with: [currentLocation,toLocation], launchOptions: [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving, MKLaunchOptionsShowsTrafficKey: NSNumber(value: true)])
+            
+        }
+        alert.addAction(action)
+        
+        let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
+        alert.addAction(cancelAction)
+        
+        UIViewController.currentViewController()?.present(alert, animated: true, completion: nil)
+    }
+
 }

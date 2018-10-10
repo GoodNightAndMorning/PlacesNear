@@ -9,6 +9,7 @@
 import UIKit
 
 class PNPlaceModel: NSObject {
+    var name:String?
     //纬度
     var latitude:Double?
     //经度

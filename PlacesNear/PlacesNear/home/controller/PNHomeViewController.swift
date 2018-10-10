@@ -95,6 +95,7 @@ extension PNHomeViewController {
             let placeModel = PNPlaceModel()
             placeModel.latitude = 26.0624461311
             placeModel.longitude = 119.3407748470
+            placeModel.name = "万达广场"
             self.mapView.addAnnotation(placeModel: placeModel)
         }
     }

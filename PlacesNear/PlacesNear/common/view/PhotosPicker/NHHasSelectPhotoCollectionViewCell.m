@@ -38,6 +38,8 @@
     if (!_photoImageView) {
         _photoImageView = [[UIImageView alloc] init];
         _photoImageView.frame = CGRectMake(0, 0, ([UIScreen mainScreen].bounds.size.width - 20) / 4, ([UIScreen mainScreen].bounds.size.width - 20) / 4);
+        _photoImageView.contentMode = UIViewContentModeScaleAspectFill;
+        _photoImageView.layer.masksToBounds = YES;
         _photoImageView.backgroundColor = [UIColor orangeColor];
     }
     return _photoImageView;

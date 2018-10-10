@@ -257,7 +257,9 @@
         __weak typeof(self)weakSelf = self;
         _photoView.deletePhotoBlock = ^{
             [weakSelf.takeBtn setTitle:[NSString stringWithFormat:@"%d",weakSelf.hasSelectedNum + (int)weakSelf.photoArr.count] forState:UIControlStateNormal];
-            weakSelf.photoView.hidden = YES;
+            if (self.photoArr.count == 0) {
+                weakSelf.photoView.hidden = YES;
+            }
         };
         
     }

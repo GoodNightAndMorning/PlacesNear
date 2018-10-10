@@ -78,7 +78,8 @@ extension PNMapView {
         let annotation:PNAnnotation = PNAnnotation()
         
         annotation.coordinate = CLLocationCoordinate2D(latitude: placeModel.latitude!, longitude: placeModel.longitude!)
-        annotation.title = "万达广场"
+        annotation.title = placeModel.name
+        annotation.placeModel = placeModel
         
         mapView.addAnnotation(annotation)
     }
@@ -115,7 +116,10 @@ extension PNMapView:BMKMapViewDelegate {
             annotationView?.canShowCallout = true// 设置弹框
             annotationView?.calloutOffset = CGPoint(x: 0, y: 0)// 设置弹框的偏移量
 
-            let paopaoView:BMKActionPaopaoView = BMKActionPaopaoView(customView: PNPaopaoView())
+            let pView = PNPaopaoView()
+            pView.placeModel = (annotation as! PNAnnotation).placeModel!
+            
+            let paopaoView:BMKActionPaopaoView = BMKActionPaopaoView(customView: pView)
             
             annotationView?.paopaoView = paopaoView
             

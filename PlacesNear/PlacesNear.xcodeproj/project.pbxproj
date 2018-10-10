@@ -63,6 +63,8 @@
 		18282411216DA863007ED877 /* PNLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18282410216DA863007ED877 /* PNLoginViewController.swift */; };
 		18282416216DA8DD007ED877 /* PNUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18282415216DA8DD007ED877 /* PNUser.swift */; };
 		18282418216DAF48007ED877 /* PNLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18282417216DAF48007ED877 /* PNLoginView.swift */; };
+		1828241C216DF649007ED877 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1828241B216DF649007ED877 /* UIViewControllerExtension.swift */; };
+		1828241E216DFA33007ED877 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1828241D216DFA32007ED877 /* MapKit.framework */; };
 		185869A1215C71880073BAAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185869A0215C71880073BAAE /* AppDelegate.swift */; };
 		185869A8215C71890073BAAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185869A7215C71890073BAAE /* Assets.xcassets */; };
 		185869B6215C71890073BAAE /* PlacesNearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185869B5215C71890073BAAE /* PlacesNearTests.swift */; };
@@ -168,6 +170,8 @@
 		18282410216DA863007ED877 /* PNLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNLoginViewController.swift; sourceTree = "<group>"; };
 		18282415216DA8DD007ED877 /* PNUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNUser.swift; sourceTree = "<group>"; };
 		18282417216DAF48007ED877 /* PNLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNLoginView.swift; sourceTree = "<group>"; };
+		1828241B216DF649007ED877 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		1828241D216DFA32007ED877 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1858699D215C71880073BAAE /* PlacesNear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlacesNear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		185869A0215C71880073BAAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		185869A7215C71890073BAAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -210,6 +214,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1828241E216DFA33007ED877 /* MapKit.framework in Frameworks */,
 				182823C8216B30B9007ED877 /* libssl.a in Frameworks */,
 				182823C7216B30A9007ED877 /* libcrypto.a in Frameworks */,
 				182823C6216B3086007ED877 /* libstdc++.6.0.9.tbd in Frameworks */,
@@ -252,6 +257,7 @@
 				0710E335215FC26300540EC8 /* UITextFieldExtension.swift */,
 				0710E334215FC26300540EC8 /* UITextViewExtension.swift */,
 				0710E3892161160800540EC8 /* StringExtension.swift */,
+				1828241B216DF649007ED877 /* UIViewControllerExtension.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -573,6 +579,7 @@
 		23D17E0D24E3CC9548A10949 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1828241D216DFA32007ED877 /* MapKit.framework */,
 				182823C5216B3086007ED877 /* libstdc++.6.0.9.tbd */,
 				182823C3216B307A007ED877 /* CoreTelephony.framework */,
 				182823C1216B3070007ED877 /* libsqlite3.0.tbd */,
@@ -883,6 +890,7 @@
 				18DF3D1E215F0E3900514E89 /* SXModel.swift in Sources */,
 				18DF3D2F215F526800514E89 /* PNPublishView.swift in Sources */,
 				0710E337215FC26300540EC8 /* UITextFieldExtension.swift in Sources */,
+				1828241C216DF649007ED877 /* UIViewControllerExtension.swift in Sources */,
 				18282408216C99B8007ED877 /* PNAnnotationView.swift in Sources */,
 				182823B4216B2ABA007ED877 /* PNMapView.swift in Sources */,
 				0710E336215FC26300540EC8 /* UITextViewExtension.swift in Sources */,

@@ -9,5 +9,5 @@
 import UIKit
 
 class PNAnnotation: BMKPointAnnotation {
-
+    var placeModel:PNPlaceModel?
 }
